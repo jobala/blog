@@ -1,5 +1,57 @@
 baseURL = "http://example.org/"
 languageCode = "en-us"
-title = "Japheth's Blog"
+title = "Japheth Obala"
 
 theme = "cactus"
+
+
+# Main navigation which appears below site header
+
+[[menu.main]]
+name = "Home"
+url = "/"
+weight = 1
+
+[[menu.main]]
+name = "All posts"
+url = "/posts"
+weight = 2
+
+[[menu.main]]
+name = "About"
+url = "/about"
+weight = 3
+
+
+# Homepage settings
+
+[params]
+  mainSection = "posts"
+  showAllPostsOnHomePage = false
+  postsOnHomePage = 5
+  showProjectsList = true
+  projectsUrl = "https://github.com/jobala"
+
+[[params.social]]
+  name = "linkedin"
+  link = "https://www.linkedin.com/in/jobala"
+
+[[params.social]]
+  name = "github"
+  link = "https://github.com/jobala"
+
+[[params.social]]
+  name = "email"
+  link = "japhethobalak@gmail.com"
+
+[markup]
+  [markup.highlight]
+    codeFences = true
+    guessSyntax = false
+    hl_Lines = ""
+    lineNoStart = 1
+    lineNos = false
+    lineNumbersInTable = true
+    noClasses = true
+    style = "monokai"
+    tabWidth = 4
