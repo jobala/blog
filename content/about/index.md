@@ -1,0 +1,1 @@
+Japheth is a software engineer working on developer experiences for Microsoft Graph and his interests span the whole computer science discipline, from what makes interfaces beautiful to how bootloaders work. He is skilled in the following languages and frameworks: Typescript, NodeJS, Dart, Python, Golang, C, React, ReactNative and Flutter.
