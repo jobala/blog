@@ -1,19 +1,19 @@
 {
   "list": [
     {
-      "name": "MsGraph Python Core",
-      "url": "https://github.com/microsoftgraph/msgraph-sdk-python-core",
-      "desc": "The Microsoft Graph Python client library, a thin wrapper around the Microsoft Graph API"
+      "name": "lilOS",
+      "url": "https://github.com/jobala/lilOS",
+      "desc": "Pronounced lil-OS, is a little OS built to understand how operating systems work."
     },
     {
       "name": "MsGraph CLI",
       "url": "https://github.com/microsoftgraph/msgraph-cli",
-      "desc": "Command line tool for interacting with Microsoft Graph"
+      "desc": "Command line tool for interacting with Microsoft Graph API."
     },
     {
-      "name": "lilOS",
-      "url": "https://github.com/jobala/lilOS",
-      "desc": "Pronounced lil-OS, is a little OS built to understand how operating systems work."
+      "name": "MsGraph Python Core",
+      "url": "https://github.com/microsoftgraph/msgraph-sdk-python-core",
+      "desc": "The Microsoft Graph Python client library, a thin wrapper around the Microsoft Graph API."
     }
   ]
 }
