@@ -1,8 +1,8 @@
 ---
 title: Humane Software
 date: 2021-01-10
-categories: Design
-slug: humane-design
+categories: reflection
+slug: humane-software
 keywords: Humane, Software
 ---
 
