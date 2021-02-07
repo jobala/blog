@@ -1,6 +1,6 @@
 ---
 title: Open Closed Principle
-date: 2021-02-7
+date: 2021-02-07
 slug: open-closed
 keywords: software design
 ---
