@@ -446,8 +446,8 @@ body td {
 }
 @font-face {
   font-style: normal;
-  font-family: "oldnewspaper";
-  src: local("oldnewspaper"), url("../lib/oldnewspaper/OldNewspaperTypes.ttf") format("truetype")
+  font-family: "goudy-bookletter-1911";
+  src: local("goudy-bookletter-1911"), url("../lib/goudy-bookletter-1911/GoudyBookletter1911-Regular.ttf") format("truetype")
 }
 *,
 *:before,

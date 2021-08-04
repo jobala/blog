@@ -444,10 +444,10 @@
     font-family: "JetBrains Mono";
     src: local("JetBrains Mono"), url("../lib/JetBrainsMono/ttf/JetBrainsMono-Regular.ttf") format("truetype");
   }
-  @font-face {
+@font-face {
   font-style: normal;
-  font-family: "oldnewspaper";
-  src: local("oldnewspaper"), url("../lib/oldnewspaper/OldNewspaperTypes.ttf") format("truetype")
+  font-family: "goudy-bookletter-1911";
+  src: local("goudy-bookletter-1911"), url("../lib/goudy-bookletter-1911/GoudyBookletter1911-Regular.ttf") format("truetype")
 }
   *,
   *:before,
@@ -470,7 +470,7 @@
     font-display: swap;
     font-weight: 400;
     font-size: 18px;
-    font-family: oldnewspaper, "JetBrains Mono", monospace;
+    font-family: "goudy-bookletter-1911", "JetBrains Mono", monospace;
     text-rendering: geometricPrecision;
     flex: 1;
     -moz-osx-font-smoothing: grayscale;
@@ -1070,7 +1070,7 @@
     min-width: 100px;
     color: #666;
     font-size: 18px;
-    font-family: oldnewspaper;
+    font-family: "goudy-bookletter-1911";
   }
   @media (min-width: 480px) {
     .post-list .post-item {
@@ -1096,8 +1096,7 @@
     margin-bottom: 0;
     text-transform: none;
     font-size: 1.5em;
-    line-height: 1.25;
-    font-family: 'oldnewspaper';
+    line-height: "goudy-bookletter-1911";
   }
   article header .meta {
     margin-top: 0;
@@ -1577,7 +1576,7 @@
     border: 1px dotted #666;
     border-radius: 4px;
     font-size: 13px;
-    font-family: oldnewspaper, "JetBrains Mono", monospace;
+    font-family: "goudy-bookletter-1911", "JetBrains Mono", monospace;
     line-height: 22px;
     -webkit-border-radius: 4px;
   }
@@ -1598,7 +1597,7 @@
     padding: 10px 15px;
     border-radius: 4px;
     background: #fafafa;
-    font-family: oldnewspaper, "JetBrains Mono", monospace;
+    font-family: "goudy-bookletter-1911", "JetBrains Mono", monospace;
     -webkit-border-radius: 4px;
   }
   .highlight figcaption {
