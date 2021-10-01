@@ -1,7 +1,8 @@
 ---
 title: Single Responsibility Principle
 date: 2021-01-23
-categories: solid
+categories: 
+    - solid principles
 slug: single-responsibility
 keywords: software design
 ---

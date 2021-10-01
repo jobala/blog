@@ -1,7 +1,8 @@
 ---
 title: Learning Vim
 date: 2021-10-01
-categories: vim
+categories:
+  - vim
 slug: learning-vim
 keywords: vim learning 
 ---

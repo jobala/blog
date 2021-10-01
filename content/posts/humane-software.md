@@ -1,7 +1,8 @@
 ---
 title: Humane Software
 date: 2021-01-10
-categories: reflection
+categories:
+  - reflection
 slug: humane-software
 keywords: Humane, Software
 ---
