@@ -3,5 +3,18 @@ title: About
 layout: default
 ---
 
-Japheth is a software engineer working on developer experiences for Microsoft Graph and his interests span the whole computer science discipline, from what makes interfaces beautiful to how bootloaders work. He is skilled in; Typescript, NodeJS, Dart, Python, Golang, C, React, ReactNative and Flutter.
+Hey, I am Japheth. Welcome to my little corner of the wild wide web.
+
+
+This site serves the following purposes:
+  1. To give back by sharing what I have learnt over time.
+  2. Reflect on what I do, no learning happens without reflection.
+  3. A creative outlet.
+
+My interests are in:
+  - Developer tools
+  - Fullstack web development
+  - Distributed Systems 
+
+Other than that, I am a recovering self taught developer.
  

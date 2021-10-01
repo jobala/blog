@@ -31,6 +31,7 @@ weight = 3
   subtitle = "Software Engineer"
   author = "Japheth Obala"
   customStylesheets = ["css/custom.css"]
+  brandIconFile = "images/brand.png"
 
 [[params.social]]
   name = "linkedin"
