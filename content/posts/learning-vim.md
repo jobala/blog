@@ -6,7 +6,7 @@ slug: learning-vim
 keywords: vim learning 
 ---
 
-I started using Vim because I wanted to look cool but kept using it because of its simplicity, speed, lack of distraction and it feels like an extension of my psyche when using it. The editor has acquired taste properties and when you go Vim you never go back. This article is about my ups and downs mastering Vim.
+I started using Vim to look cool but kept using it for its simplicity, speed, lack of distraction and how it feels like an extension of my psyche when using it. The editor has acquired taste properties and when you go Vim you never go back. This article is about my ups and downs mastering Vim.
 
 I came across Vim around the same time I was starting out as a programmer in 2014. A friend was helping us with Ruby and told us about Vim so later that day I searched for tutorials but gave up almost immeadiately because it felt too complex. I encoutered Vim again two years later at Andela. I struggled with it for a few weeks then realized that if I was to get better at Vim, I needed to get better at touch typing. I was driven by vain reasons, I wanted to be cool.
 
@@ -16,4 +16,4 @@ With typing out of the way, I gave Vim another shot and as they say third time i
 
 After sometime I noticed that Vim would take a noticeable amount of time to start up and I figured it was because of the many plugins that awesome-vimrc had installed and I probably wasn't using anyway. So I decided to start configuring Vim from a **blank .vimrc** and adding plugins and configurations on a need to need basis, using awesome-vimrc's config as reference. This was an enriching exercise because not only did my Vim become faster, I also learned a lot in the process. 
 
-I have been using Vim for a little over four years now and if you are considering learning Vim I strongly encourage you to try it, it is a gift that keeps on giving.
+I have been using Vim for a little over four years now and if you are considering learning Vim I strongly encourage you to try it, it is an investment that keeps on compounding.
