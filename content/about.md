@@ -13,7 +13,7 @@ This site serves the following purposes:
 
 My interests are in:
   - Developer tools
-  - Fullstack web development
+  - Go 
   - Distributed Systems 
 
 Other than that, I am a recovering self taught developer.
