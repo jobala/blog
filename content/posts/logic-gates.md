@@ -9,27 +9,28 @@ keywords: Logic-Gates
 
 A digital computer is made up numerous logic gates that only have two states on and off. In this article I will introduce the elementary logic gates and for the next few articles I will be exploring how these unintelligible gates can be combined to form a functional computing device.
 
+
 ## And
 
-The **And** gate outputs 1 if both inputs are 1
+The And gate is constructed by combining two Nand gates as shown below. The And gate outputs 1 only if both inputs are 1.
 
 ![and-gate](/images/and.png)
 
 ## Or
 
-The **Or** gate outputs 1 when either of it's inputs are 1
+The Or gate is constructed by combining three Nand gates as shown below. The Or gate outputs 1 if either of it's inputs is 1.
 
 ![or-gate](/images/or.png)
 
 ## Not
 
-The **Not** gate outputs 1 only if the input is 0
+The Not gate is constructed using a single Nand gate by feeding the input to a Nand gate. The Not gate outputs 1 only if the input is 0.
 
 ![not-gate](/images/not.png)
 
 ## Xor
 
-The **Xor** gate outputs 1 only if it's inputs differ
+The Xor gate is constructed by combining Not, And and Or gates. The Xor gate outputs 1 only if it has differing inputs.
 
 ![xor](/images/xor.png)
 
