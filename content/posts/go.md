@@ -23,7 +23,7 @@ Lack of classes is Go's greatest feature after its concurrency primitives. It to
 
 #### Implicit Interfaces
 
-Python uses abstract classes to implement interfaces, you create an abstract class that is inherited by the class that implements the interface and used as a type for an argument or the return value. In Go you create the interface and any object that has methods specified by the interface implements the interface implicitly.
+Python uses abstract classes to implement interfaces, you create an abstract class that is inherited by the class that implements the interface and used as a type for an argument or the return value. In Go you create the interface and any object that has methods specified by the interface implements the interface.
 
 #### Gets Out Of Your Way
 
