@@ -6,7 +6,7 @@ categories:
 slug: go-request-compression
 keywords: go
 ---
-Compressing the request body reduces latency by reducing the request's payload size. In this article I will show you how to compress request body using **gzip**.
+Request body compression reduces latency by reducing the request's payload size. In this article I will show you how to compress request body using **gzip**.
 
 #### Reading Request Body
 
