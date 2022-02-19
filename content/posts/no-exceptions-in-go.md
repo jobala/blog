@@ -8,7 +8,7 @@ slug: no-exceptions-in-go
 keywords: go
 ---
 
-If you've read Uncle Bob's Clean Code then you know that throwing exceptions is cleaner than returning error codes but Go turns the Clean Code advice on its head and emphasises on returning error values instead. Lack of exceptions in Go feels anachronistic but like many things about the language, there are strong reasons behind the decision.
+If you've read Uncle Bob's Clean Code then you know that throwing exceptions is considered cleaner than returning error codes but Go turns the Clean Code advice on its head and emphasises on returning error values instead. Lack of exceptions in Go feels anachronistic but like many things about the language, there are strong reasons behind the decision.
 
 ### Exceptions Considered Harmful
 
