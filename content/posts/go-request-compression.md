@@ -39,7 +39,7 @@ To compress the body, first create a buffer then create a gzip writer and pass t
 #### Update Content length
 
 ```go
-req.ContentLength = len(buffer.Bytes())
+req.ContentLength = buffer.Len()
 ```
 Because the body size has changed, update the request's **ContentLength** property with the new size.
 
