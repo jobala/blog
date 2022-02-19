@@ -8,9 +8,11 @@ slug: no-exceptions-in-go
 keywords: go
 ---
 
-Uncle Bob's Clean Code encourages use of exceptions over error status codes so I was surprised when I learnt that Go doesn't support exceptions and instead treats errors as values. Like many things about Go, there are good reasons for this design decision but at first it felt anachronistic and backward. It is one of those things that you eventually get used to.
+If you've read Uncle Bob's Clean Code then you know that throwing exceptions is cleaner than returning error codes but Go turns the Clean Code advice on its head and emphasises on returning error values instead. Lack of exceptions in Go feels anachronistic but like many things about the language, there are strong reasons behind the decision.
 
-The reason Go doesn't have exceptions is because they introduce a code path that if not handled may cause the program to crash in surprising ways. Take the Python program below, to a caller it is unclear that the function throws an exception.
+### Exceptions Considered Harmful
+
+Exceptions add a second control flow which makes programs less readable and hard to reason about, take for example the Python program below. It is not clear from the caller's perspective that the function raises an exception this subtleness in more complex scenarios would make the program hard to reason about.
 
 ```python
 def divide(dividend, divisor):
@@ -24,7 +26,9 @@ def divide(dividend, divisor):
 res = divide(1, 0)
 ```
 
-In Go, the error has to be returned and handled explicitly.
+### Error Values
+
+Go returns error values rather than throwing exceptions making error handling explicit. In the code snippet below, the **divide** function returns an error that must either be explicitly handled or ignored.
 
 ```go
 func divide(divided, divisor int) error {
@@ -39,4 +43,4 @@ if err != nil {
 }
 ```
 
-The down side of treating errors as values is that you end up having a lot of `nil` checks which is annoying at first but you get used to it.
+The downside of returning errors as values is that Go forces you to tradeoff code easthetics for explicit error handling which is a fair tradeoff if you ask me.
