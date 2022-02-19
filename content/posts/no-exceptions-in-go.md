@@ -8,15 +8,6 @@ slug: no-exceptions-in-go
 keywords: go
 ---
 
-I want to reflect on Go's error handling and how it is different from Python
-
-- Errors in Go are returned
-- Avoids errors where functions do not say that they throw errors
-- Feels backward
-- Best practises of handling errors in Go
-  - Wrapping errors
-  -
-
 Uncle Bob's Clean Code encourages use of exceptions over error status codes so I was surprised when I learnt that Go doesn't support exceptions and instead treats errors as values. Like many things about Go, there are good reasons for this design decision but at first it felt anachronistic and backward. It is one of those things that you eventually get used to.
 
 The reason Go doesn't have exceptions is because they introduce a code path that if not handled may cause the program to crash in surprising ways. Take the Python program below, to a caller it is unclear that the function throws an exception.
