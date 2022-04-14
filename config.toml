@@ -54,5 +54,5 @@ weight = 3
     lineNos = false
     lineNumbersInTable = true
     noClasses = true
-    style = "monokai"
+    style = "github"
     tabWidth = 4
