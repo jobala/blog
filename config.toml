@@ -54,5 +54,5 @@ weight = 3
     lineNos = false
     lineNumbersInTable = true
     noClasses = true
-    style = "github"
+    style = "pygments"
     tabWidth = 4
