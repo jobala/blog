@@ -2,7 +2,7 @@ baseURL = "https://www.japhethobala.com/"
 languageCode = "en-us"
 title = "Japheth Obala"
 
-theme = "smigle"
+theme = "butterick"
 
 
 # Main navigation which appears below site header
