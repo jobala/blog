@@ -6,6 +6,7 @@ categories:
   - distributed-systems
   - infrastructure
 slug: compute-cluster
+draft: true
 keywords:
   - cluster
   - distributed
