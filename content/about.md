@@ -7,7 +7,7 @@ Hey, I am Japheth. Welcome to my little corner of the wild wide web.
 
 This site serves the following purposes:
 
-1. To give back by sharing what I have learnt over time.
+1. To share what I have learnt.
 2. Reflect on what I do, no learning happens without reflection.
 3. A creative outlet.
 
