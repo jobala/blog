@@ -2,25 +2,14 @@ baseURL = "https://www.japhethobala.com/"
 languageCode = "en-us"
 title = "Japheth Obala"
 
-theme = "smigle"
+theme = "butterick"
 
 
 # Main navigation which appears below site header
-
-[[menu.main]]
-name = "Home"
-url = "/"
-weight = 1
-
-[[menu.main]]
-name = "All posts"
-url = "/posts/"
-weight = 2
-
 [[menu.main]]
 name = "About"
 url = "/about/"
-weight = 3
+weight = 1
 
 
 # Homepage settings
@@ -54,5 +43,5 @@ weight = 3
     lineNos = false
     lineNumbersInTable = true
     noClasses = true
-    style = "monokai"
+    style = "github"
     tabWidth = 4

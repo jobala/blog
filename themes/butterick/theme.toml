@@ -1,0 +1,15 @@
+name = "butterick"
+license = "MIT"
+description = "Minimal, beautiful and functional Hugo theme"
+tag = ["minimal", "clean", "beautiful", "blog"]
+min_version = "0.41.0"
+
+["author"]
+  name = "Japheth Obala"
+  homepage = "japhethobala.com"
+
+[module]
+  [module.hugoVersion]
+    extended = false
+    max = ""
+    min = "0.41.0"

@@ -1,0 +1,19 @@
+@font-face {
+  font-family: "Helvetica Neue";
+  src: url("/fonts/HelveticaNeue-Light.otf");
+}
+
+@font-face {
+  font-family: "Pt Serif";
+  src: url("/fonts/PTSerifCaption-Regular.ttf");
+}
+
+@font-face {
+  font-family: "Nanum";
+  src: url("/fonts/NanumMyeongjo-Regular.ttf");
+}
+
+@font-face {
+  font-family: "charter";
+  src: url("/fonts/charter_regular.woff2");
+}
