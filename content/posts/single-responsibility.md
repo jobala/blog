@@ -8,7 +8,7 @@ keywords: software design
 ---
 
 
-I used to think the single responsibility principle means that a module should only do one thing, this is a common misunderstanding of the principle and often leads to fragmented codebase with thin classes that have one or two methods littering the codebase as we can see in this [StackOverflow](https://softwareengineering.stackexchange.com/questions/150760/single-responsibility-principle-how-can-i-avoid-code-fragmentation).
+Most people think that the single responsibility principle means that a module should do one thing. This is a common misunderstanding of the principle and leads to a fragmented codebase with thin classes, with one or two methods, littering the codebase as we can see in this [StackOverflow question](https://softwareengineering.stackexchange.com/questions/150760/single-responsibility-principle-how-can-i-avoid-code-fragmentation).
 
 While researching about the subject, I came across [SRP is a hoax](https://www.yegor256.com/2017/12/19/srp-is-hoax.html) which in my opinion embodies the misunderstanding of the single responsibility principle. The article shows the code below
 
