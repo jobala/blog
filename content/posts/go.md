@@ -7,7 +7,7 @@ slug: go
 keywords: go
 ---
 
-Recently I was asked to work on MicrosoftGraph's [Go SDK](https://github.com/microsoftgraph/msgraph-sdk-go-core) after working exclusively on Python projects for the last two years with a short stint on [MGT](https://github.com/microsoftgraph/microsoft-graph-toolkit) which is in Typescript. This article is about what I like about Go as a (former?) Python programmer.
+Recently I was asked to work on MicrosoftGraph's [Go SDK](https://github.com/microsoftgraph/msgraph-sdk-go-core) after working on Python projects for a long time with a stint on [MGT](https://github.com/microsoftgraph/microsoft-graph-toolkit) which is written in Typescript. This article is about what I like about Go as a (former?) Python programmer.
 
 ### Formatting
 

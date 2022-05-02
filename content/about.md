@@ -13,8 +13,8 @@ This site serves the following purposes:
 
 I am interested in:
 
-- Developer productivity
-- Go
-- Distributed Systems
+- Developer Tools
+- SDKs
+- Theory of Computation
 
 Other than that, I am a recovering self taught developer.
