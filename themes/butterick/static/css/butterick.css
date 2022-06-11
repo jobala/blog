@@ -7,8 +7,8 @@ header {
   width: 100%;
 }
 
+/*For tablets*/
 @media only screen and (min-width: 768px) {
-  /*For tablets*/
   header {
     width: 80%;
   }
@@ -18,14 +18,14 @@ header {
   }
 }
 
+/* For desktop: */
 @media only screen and (min-width: 1024px) {
-  /* For desktop: */
   header {
-    width: 40%;
+    width: 640px;
   }
 
   #content {
-    width: 40%;
+    width: 80ch;
   }
 }
 
@@ -51,7 +51,7 @@ header > a > h3 {
 
 .menu-item {
     font-size: 1.3em;
-      font-family: "Roboto Slab";
+    font-family: "Roboto Slab";
 }
 
 h1 {
