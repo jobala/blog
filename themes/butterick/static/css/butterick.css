@@ -61,6 +61,13 @@ h1 {
   margin-bottom: 50px;
 }
 
+#content > h2 {
+  font-family: "Helvetica Neue";
+  font-weight: 200;
+  color: #333;
+  margin-bottom: 50px;
+}
+
 #content > h3 {
   font-family: "Helvetica Neue";
   font-weight: bold;
