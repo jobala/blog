@@ -9,7 +9,7 @@ keywords:
   - vim
 ---
 
-Vim is powerful editor that evolves to match your needs, it can be a peashooter or a howitzer depending on what you want to use it for. This article helps you setup Vim for basic text editing and use it as a substitute for notepad. Vim is configured through a **.vimrc** which should be in your root directory, `touch ~/.vimrc` and open the file in your favourite text editor.
+Vim is a powerful editor that evolves to match your needs, it can be a peashooter or a howitzer depending on what you want to use it for. This article helps you setup Vim for basic text editing and use it as a substitute for notepad. Vim is configured through a **.vimrc** which should be in your root directory, `touch ~/.vimrc` and open the file in your favourite text editor.
 
 ### Essential Settings
 
