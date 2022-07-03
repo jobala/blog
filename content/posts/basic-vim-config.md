@@ -1,6 +1,6 @@
 ---
 title: Vim for Daily Text Editing
-date: 2022-03-11
+date: 2022-06-18
 categories:
   - engineering
   - editor 
@@ -18,11 +18,6 @@ Add the following to your **.vimrc** file
 ```
 set number
 set history=500
-set autoread
-
-set foldmethod=indent
-set nofoldenable
-
 inoremap jj <Esc> 
 
 map <space> /
@@ -37,11 +32,9 @@ filetype indent on
 au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
 ```
 
-`set number` configures vim to show line numbers. `set history=500` will make vim  remember the last five hundred commands and `set autoread` sets up vim to reload files that change externally, for example, when you have the same file open in Vim and another editor and you change it in the other editor, this setting will make Vim reload those changes.
+`set number` configures vim to show line numbers and `set history=500` will make vim  remember the last five hundred commands.
 
-`set foldmethod=indent` enables code folding on indented code. With this setting, Vim automatically folds code whenever you open a file which is annoying because you have to manually unfold the code. `set nofoldenable` disables automatic folding on opening a file. In NORMAL mode,   type `zf` to fold and `zo` to unfold.
-
-When in INSERT mode clicking the `Esc` key returns you to NORMAL mode but in modern editors the `Esc` key is too far for it to be convenient especially because this is a common operation. `inoremap jj <Esc>` remaps the escape function to double clicking the `j` key. This reduces the pain especially because `j` is in the home row.
+When in INSERT mode clicking the `Esc` key returns you to NORMAL mode and since modern keyboards have the `Esc` key in a hard to reach location for it to be convenient especially because this is a common operation. `inoremap jj <Esc>` remaps the escape function to double clicking the `j` key. This reduces the pain especially because `j` is in the home row.
 
 `map <space> /` maps the search functionality to the space key. So when in NORMAL mode, we can start searching for a word by pressing `Space`. Vim highlights all occurrences of the matched words. When done searching you can turn off highlighting by typing  `:noh`. 
 
@@ -57,6 +50,7 @@ Earlier I showed how you can search and mentioned that Vim will highlight matche
 Assuming you are  editing two files A and B. When you're done editing B and return to A, you would like your cursor position in A to be the same as it was before you moved to B. `au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif` is an automatic command that Vim runs everytime you open a new file to do just that.
 
 ### Text And Indents
+
 ```
 set expandtab
 set tabstop=4
@@ -70,7 +64,7 @@ set autoindent
 set smartindent
 ```
 
-You might have had of the tab vs spaces wars, well space wins. `set expandtab` replaces tab characters with space characters. `set tabstop=4` controls the number of spaces that will be inserted when the tab key is clicked. It configures it to four spaces. `set shiftwidth=4` tells vim to insert four space characters for indentation.
+`set expandtab` replaces tab characters with space characters. `set tabstop=4` controls the number of spaces that will be inserted when the tab key is clicked. It configures it to four spaces. `set shiftwidth=4` tells vim to insert four space characters for indentation.
 
 `set linebreak` tells vim to insert a linebreak at the following characters `" ^I!@*-+;:,./?"` instead of at the last character that fits on the screen. `set tabwidth=500` controls the width of text being inserted. `set wrap` tells vim to wrap lines longer than the window's width will wrap and display continues on the next line. 
 
