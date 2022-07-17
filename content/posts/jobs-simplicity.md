@@ -4,13 +4,15 @@ date: 2022-07-17T08:46:54+01:00
 slug: jobs-simplicity
 ---
 
-Reading [Insanely Simple](https://www.amazon.co.uk/Insanely-Simple-Obsession-Drives-Success/dp/067092119X) was eye opening in many ways as it unveiled the secret behind Apple's success. Behind the curtain was Steve Jobs who much like St. George slayer of dragons wielded simplicity like a sword and slayed the dragons of complexity and fluff. This article is my reflection of the principles and how to adopt them as software engineers.
+Reading [Insanely Simple](https://www.amazon.co.uk/Insanely-Simple-Obsession-Drives-Success/dp/067092119X) was eye opening in many ways as it unveiled the secret behind Apple's success and behind the curtain was Steve Jobs who as it were, wielded simplicity like a sword slaying the dragons of complexity and fluff. This article is my reflection on his simplicity principles and how to adopt them as software engineers.
 
-### Apply Your Core Values
+### Build Great Products
 
-One of Steve's core value was building great products. He was relentless in his pursuit and was famous for hitting teams with a "simplicity stick" when they demoed products that didn't meet the simplicity bar. He had a vision of how things should work and would accept nothing less.
+Steve was relentless in his pursuit of great products and was famous for hitting teams with a "simplicity stick" when they demoed products that didn't meet the simplicity bar. Great products look, feel and sound perfectly natural.
 
-As software engineers we have a set of core values like ensuring that the software we release to customers is tested and documented yet we more often than not bypass these checks for the sake of speed. Forgetting that in order to go fast, we need to go well. The software we release to customers should reflect the values we hold just like the way every Apple product reflects Steve's core values.
+The mistake we make is focusing on the technology and completely disregarding the customer. The lack of empathy and respect for the customer manifests itself as hard to use, inaccessible and complex software.
+
+We have to put the customer at the center and all technical decisions we make should be for their benefit or help us serve the customer better.  
 
 ### Don't Stop At The First Solution
 
