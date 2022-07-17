@@ -28,4 +28,4 @@ The best advise I have received is that you can't do two jobs and do them well, 
 
 ### Conclusion
 
-In conclusion, our products should reflect the values we hold, the first solution is not always the best solution and focusing gives us more time to simplify and build high quality products.
+In conclusion, we should aspire to build great products, the first solution is not always the best solution and focusing gives us more time to simplify and build high quality products.
