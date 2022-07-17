@@ -6,7 +6,7 @@ slug: jobs-simplicity
 
 Reading [Insanely Simple](https://www.amazon.co.uk/Insanely-Simple-Obsession-Drives-Success/dp/067092119X) was eye opening in many ways as it unveiled the secret behind Apple's success. Behind the curtain was Steve Jobs who much like St. George slayer of dragons wielded simplicity like a sword and slayed the dragons of complexity and fluff. This article is my reflection of the principles and how to adopt them as software engineers.
 
-### Have Core Values
+### Apply Your Core Values
 
 One of Steve's core value was building great products. He was relentless in his pursuit and was famous for hitting teams with a "simplicity stick" when they demoed products that didn't meet the simplicity bar. He had a vision of how things should work and would accept nothing less.
 
