@@ -12,7 +12,7 @@ Steve was relentless in his pursuit of great products and was famous for hitting
 
 The mistake we make is focusing on the technology and completely disregarding the customer. The lack of empathy and respect for the customer manifests itself as hard to use, inaccessible and complex software.
 
-We have to put the customer at the center and all technical decisions we make should be for their benefit or help us serve the customer better.  
+We have to put the customer at the center and all technical decisions we make should be for their benefit or help us serve them better.  
 
 ### Don't Stop At The First Solution
 
