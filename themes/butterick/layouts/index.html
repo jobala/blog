@@ -1,14 +1,6 @@
 {{ define "main" }}
   <main>
-    {{ with .Site.Menus.main }}
-      {{ range $index, $value := . }}
-        {{ if $index }} | {{ end }}
-        <div class="menu-item">
-          <a  href="{{ .URL | relURL }}">{{ .Name }}</a>
-        </div>
-      {{ end }}
-    {{ end }}
-    <h3>Posts</h3>
+
     <div class="archive">
       <ul>
         {{ $paginator := .Paginate (where .Site.RegularPages "Type" "in" .Site.Params.mainSections) }}
