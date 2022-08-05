@@ -6,7 +6,7 @@ categories:
 slug: dont-write-like-you-speak
 ---
 
-I have been feasting off the writings of Gilbert Chesterton for the last few days and I became more and more displeased at modern writing with every turning of a page. This is my rant 
+I have been feasting on Gilbert Chesterton's writings for the last few days and I became more and more displeased at modern writing with every turning page. This is my rant 
 
 It is disappointing that despite a more educated populace our contribution to the literary world is a careless expression of facts and a terribly bland text. Having read Chesterton's beautiful paragraphs, which are often full of well dressed sentences and delightful imagery, it makes me cringe everytime I hear the all too common "write like you speak" recommendation which leads to lacklustre writing.
 
