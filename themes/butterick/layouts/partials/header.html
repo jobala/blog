@@ -2,13 +2,14 @@
   <nav>
     <div class="home">
       <a href="{{ .Site.BaseURL }}">
-        <h3>{{ .Site.Title }}</h3>
+        <h3>Home</h3>
       </a>
     </div>
-
+    
     {{ with .Site.Menus.main }}
       {{ range $index, $value := . }}
         {{ if $index }} | {{ end }}
+        <div class="vl"></div>
         <div class="menu-item">
           <a  href="{{ .URL | relURL }}"><h3>{{ .Name }}</h3></a>
         </div>
