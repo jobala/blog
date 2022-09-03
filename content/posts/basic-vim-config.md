@@ -15,7 +15,7 @@ Vim is a powerful editor that evolves to match your needs, it can be a peashoote
 
 Add the following to your **.vimrc** file
 
-```
+```sh
 set number
 set history=500
 inoremap jj <Esc> 
@@ -51,7 +51,7 @@ Assuming you are  editing two files A and B. When you're done editing B and retu
 
 ### Text And Indents
 
-```
+```sh
 set expandtab
 set tabstop=4
 set shiftwidth=4
@@ -74,7 +74,7 @@ set smartindent
 In vim you can split you editor into multiple windows vertically with `:vsplit` or horizontally with :split. The configuration below makes it easy to move from one window to another.
 
 
-```
+```sh
 map <C-j> <C-W>j
 map <C-k> <C-W>k
 map <C-h> <C-W>h
