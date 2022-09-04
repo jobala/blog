@@ -73,4 +73,4 @@ func handlerFunc(args Args) {
 
 ## Contributing To Commando
 
-At the time of this writing [Commando](https://github.com/jobala/commando) is in a MVP and there's a lot to do before it is production ready. Play with it, create issues and if you feel inspired make a pull request.
+At the time of this writing [Commando](https://github.com/jobala/commando) is a MVP and there's a lot to do before it is production ready. Play with it, create issues and if you feel inspired make a pull request.
