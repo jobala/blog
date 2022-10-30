@@ -1,19 +1,19 @@
 @font-face {
-  font-family: "Helvetica Neue";
-  src: url("/fonts/helvetica-neue/HelveticaNeue-Light.otf");
+  font-family: 'Helvetica Neue';
+  src: url('/fonts/helvetica-neue/HelveticaNeue-Light.otf');
 }
 
 @font-face {
-  font-family: "Pt Serif";
-  src: url("/fonts/pt_serif_caption/PTSerifCaption-Regular.ttf");
+  font-family: 'Pt Serif';
+  src: url('/fonts/pt_serif_caption/PTSerifCaption-Regular.ttf');
 }
 
 @font-face {
-  font-family: "Nanum";
-  src: url("/fonts/nanum_myeongjo/NanumMyeongjo-Regular.ttf");
+  font-family: 'Nanum';
+  src: url('/fonts/nanum_myeongjo/NanumMyeongjo-Regular.ttf');
 }
 
 @font-face {
-  font-family: "Roboto Slab";
-  src: url("/fonts/roboto_slab/RobotoSlab-Light.ttf");
+  font-family: 'Roboto Slab';
+  src: url('/fonts/roboto_slab/RobotoSlab-Light.ttf');
 }
