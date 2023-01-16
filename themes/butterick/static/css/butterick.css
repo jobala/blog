@@ -8,6 +8,14 @@ header {
   text-align: justify;
 }
 
+.calendar-container {
+  width:100%;
+}
+
+.calendar {
+  width: --webkit-fill-available
+}
+
 /*for tablets*/
 @media only screen and (min-width: 768px) {
   header {
@@ -17,6 +25,10 @@ header {
   #content {
     width: 80%;
     text-align: justify;
+  }
+
+  .calendar-container {
+    width: 80ch;
   }
 }
 
@@ -29,6 +41,10 @@ header {
   #content {
     width: 80ch;
     text-align: justify;
+  }
+
+  .calendar-container {
+    width: 80ch;
   }
 }
 

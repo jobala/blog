@@ -5,5 +5,16 @@
     <div id="content">
       {{ block "main" . }}{{ end }}
     </div>
+    {{ if isset .Params "layout"}}
+      <div class="calendar-container">
+        <div class="calendar">
+          Loading the data just for you.
+        </div>
+      </div>
+    {{ end }}
   </body>
+  <script>
+    // or enable responsive functionality:
+    GitHubCalendar(".calendar", "jobala", { responsive: true });
+  </script>
 </html>
