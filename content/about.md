@@ -14,6 +14,6 @@ I am interested in:
 
 - Developer Tools
 - SDKs
-- Theory of Computation
+- Build systems
 
 Other than that, I am a recovering self taught developer.
