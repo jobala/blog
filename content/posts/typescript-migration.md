@@ -1,41 +1,35 @@
 ---
-title: Migrating Netlify-Build To Typescript
+title: From Javascript To Typescript
 date: 2022-10-30
 categories:
   - engineering
   - developer-experience
-slug: typescript-migration
+slug: js-to-ts
 keywords:
   - typescript
   - developer-experience
 ---
 
-[This PR](https://github.com/netlify/build/pull/4413) was one of the first things I worked on after joining Netlify and
-it was followed closely by [another PR](https://github.com/netlify/build/pull/4454) that fixed a null check bug
-introduced by the former. The bug was the straw that broke the camel's back and we decided to migrate
-[netlify/build](https://github.com/netlify/build) to Typescript.
+The advantages of Typescript over Javascript are obvious and little convincing is required to persuade a team to migrate
+from Javascript to Typescript. For historical reasons [netlify/build](github.com/netlify/build) was in Javascript and we
+decided to migrate it to Typescript in an effort to improve developer experience.
 
-The repo itself is popular and receives changes frequently so a big bang migration -- where folks leave it a Javascript
-repo and find it a Typescript repo -- was not an option. The migration had to be incremental and support the existence
-of both Javascript and Typescript files.
+[netlify/build](github.com/netlify/build) is an opensource monorepo and receives frequent contributions. This
+constrained us from performing a big bang migration which has the risk of large merge conflicts. The migration had to be
+transparent, making it possible for devs to add changes without noticing that the underlying tooling was changing.
 
-The first thing we did was add a build script that simply copied the contents of the src directory to a lib directory
-`build: cp -R src/ lib/` and export files from it. So the exports property in package.json changed from
-`exports: 'src/index.js'` to `exports: 'lib/index.js'`. Doing this allowed us to verify that changing the `exports`
-directory didn't introduce bugs.
+A package.json file has an `exports` property which is a package's main entry point. Initially the property was
+`exports: 'src/index.js'` because were publishing directly from the **src** directory but Typescript usually outputs
+build files in different directory normally called lib or dist. We used lib in our case. So we used the build script to
+simply **copy files** from src to lib, `build: cp -R src/ lib/` and changed the exports propetry to
+`exports: lib/index.js`. Doing this means devs could keep contributing to the repo without noticing that we are now
+publishing from a different directory.
 
-The next natural step was to improve the build script to actually build using the Typescript compiler so the build
-script became `build: tsc` and we used the `allowJS: true` compiler option in our tsconfig to allow the building of both
-Javascript and Typescript files. That should have worked but we had a peculiar setup that depended on the presence of
-some yaml files. So we added a prebuild script that copied them over to the lib directory.
+Next we needed to support both Javascript and Typescript files so that devs could add new Typescript files and
+optionally migrate Javascript files to Typescript. We wanted people to be productive and avoided imposing a migration
+tax in their workflow. We used the `allowJS: true` compiler option to allow the building of js files and added
+`"include": ["src/**/*.ts", "src/**/*.js"]` in our tsconfig.json.
 
-We also came across a curious case of our tests failing because of mismatched snapshots which was caused by our fixture
-setup code looking for a tsconfig up the directory tree. It wasn't clear why this was happening and it was not an
-important problem to solve so we used a dummy tsconfig file in the fixtures directory so that the project's tsconfig
-doesn't leak to the fixture setup.
-
-With most of infrastructure in place we started migrating small parts of the repo to Typescript without inconvening
-everyone else with merge conflicts. We were not so lucky with migrating our tests to Typescript because we were using
-Ava which doesn't support Typescript out of the box and using tsnode/esm loader caused our tests to timeout during
-CI/CD. Using tsnode's transipileOnly option worked for some cases but we decided to dump Ava and use Vitest for our
-testing.
+With most of the infrastructure in place we started migrating small parts of the repo to Typescript without inconvening
+everyone else with merge conflicts. Since we couldn't migrate all packages in the monorepo ourselves we decided to use a
+github-action to nudge devs who added changes to a Javascript file to convert the file to Typescript.
