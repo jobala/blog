@@ -8,7 +8,6 @@ keywords:
   - golang
   - go
   - concurrency
-draft: true
 ---
 
 ## Goroutines
@@ -36,8 +35,8 @@ go neighbour(telephoneLine)
 ```
 
 Then the neighbour can communicate to us through the `telephoneLine` channel. In the code below, the neighbour sends us
-a message `1` and closes the telephoneLine. It is idiomatic for the goroutine that writes to a channel to close it when
-done.
+a message `1` and closes the `telephoneLine`. It is idiomatic for the goroutine that writes to a channel to close it
+when done.
 
 ```Go
 func neighbour(telephoneLine chan<- int) {
