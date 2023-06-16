@@ -3,19 +3,21 @@ shortcodes = document.getElementsByClassName('gh')
 for (let i = 0; i < shortcodes.length; i++) {
   const url = new URL(shortcodes[i].innerHTML)
   const [start, stop] = getLineNumbers(url.hash)
-  console.log(start, stop)
+  const code = document.createElement('code')
+  code.setAttribute('class', 'language-go')
 
   fetch('https://raw.githubusercontent.com/' + url.pathname.replace('/blob', '')).then(async (res) => {
     r = await res.text()
     lines = r.split('\n')
 
     for (let j = start; j < stop + 1; j++) {
-      shortcodes[i].value += '\n' + lines[j]
+      const div = document.createElement('div')
+      div.innerHTML = hljs.highlight(lines[j], { language: 'golang', style: 'github' }).value
+      code.appendChild(div)
     }
 
-    shortcodes[i].style.height = shortcodes[i].scrollHeight + 'px'
+    shortcodes[i].appendChild(code)
   })
-  console.log(url)
 }
 
 /**
