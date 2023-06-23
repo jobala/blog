@@ -10,39 +10,58 @@ const Language = {
 }
 
 for (let i = 0; i < shortcodes.length; i++) {
-  const url = new URL(shortcodes[i].innerHTML)
-  shortcodes[i].innerHTML = ''
-  const [start, stop] = getLineNumbers(url.hash)
-  const code = document.createElement('code')
-  const language = getLanguage(url.pathname)
+  const url = getUrlFrom(shortcodes[i].innerHTML)
   const snippetPath = getSnippetPath(url.pathname)
-  code.setAttribute('class', 'snippet')
+  const [firstLine, lastLine] = getLineNumbers(url.hash)
 
-  // add snippet header
+  // create elements
+  const codeEl = document.createElement('code')
   const snippetHeader = document.createElement('div')
-  const linkToSnippet = document.createElement('a')
-  linkToSnippet.setAttribute('href', url.href)
-  linkToSnippet.setAttribute('target', '_blank')
-  linkToSnippet.innerHTML = snippetPath
-  snippetHeader.setAttribute('class', 'snippet-header')
-  snippetHeader.appendChild(linkToSnippet)
-  shortcodes[i].appendChild(snippetHeader)
-
   const snippetContainer = document.createElement('div')
+  const linkToSnippet = document.createElement('a')
+
+  // set attributes
+  codeEl.setAttribute('class', 'snippet')
   snippetContainer.setAttribute('class', 'snippet-container')
-  snippetContainer.appendChild(code)
+  snippetHeader.setAttribute('class', 'snippet-header')
+  linkToSnippet.setAttribute('target', '_blank')
+  linkToSnippet.setAttribute('href', url.href)
+
+  linkToSnippet.innerHTML = snippetPath
+  shortcodes[i].innerHTML = ''
+  shortcodes[i].appendChild(snippetHeader)
+  snippetHeader.appendChild(linkToSnippet)
+  snippetContainer.appendChild(codeEl)
   shortcodes[i].appendChild(snippetContainer)
 
-  fetch('https://raw.githubusercontent.com/' + url.pathname.replace('/blob', '')).then(async (res) => {
-    r = await res.text()
-    lines = r.split('\n')
-
-    for (let j = start - 1; j < stop + 1; j++) {
-      const div = document.createElement('div')
-      div.innerHTML = hljs.highlight(lines[j], { language, style: 'github' }).value
-      code.appendChild(div)
-    }
+  fetchSnippetFrom(url).then((snippet) => {
+    createCodeBlock(snippet, firstLine, lastLine, codeEl, url)
   })
+}
+
+async function fetchSnippetFrom(url) {
+  return fetch('https://raw.githubusercontent.com/' + url.pathname.replace('/blob', '')).then(async (res) => {
+    return await res.text()
+  })
+}
+
+function createCodeBlock(snippet, start, stop, code, url) {
+  snippet
+    .split('\n')
+    .slice(start, stop + 1)
+    .map((line) => {
+      const div = document.createElement('div')
+      div.innerHTML = highlightLine(line, getLanguage(url.pathname))
+      code.appendChild(div)
+    })
+}
+
+function highlightLine(line, language) {
+  return hljs.highlight(line, { language, style: 'github' }).value
+}
+
+function getUrlFrom(permalink) {
+  return new URL(permalink)
 }
 
 /**
