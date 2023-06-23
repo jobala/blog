@@ -1,14 +1,5 @@
 shortcodes = document.getElementsByClassName('gh')
 
-const Language = {
-  go: 'go',
-  toml: 'toml',
-  js: 'javascript',
-  json: 'json',
-  yml: 'yaml',
-  yaml: 'yaml',
-}
-
 for (let i = 0; i < shortcodes.length; i++) {
   const url = getUrlFrom(shortcodes[i].innerHTML)
   const snippetPath = getSnippetPath(url.pathname)
@@ -27,6 +18,7 @@ for (let i = 0; i < shortcodes.length; i++) {
   linkToSnippet.setAttribute('target', '_blank')
   linkToSnippet.setAttribute('href', url.href)
 
+  // modify elements
   linkToSnippet.innerHTML = snippetPath
   shortcodes[i].innerHTML = ''
   shortcodes[i].appendChild(snippetHeader)
@@ -35,7 +27,7 @@ for (let i = 0; i < shortcodes.length; i++) {
   shortcodes[i].appendChild(snippetContainer)
 
   fetchSnippetFrom(url).then((snippet) => {
-    createCodeBlock(snippet, firstLine, lastLine, codeEl, url)
+    createCodeBlock(snippet, firstLine, lastLine, codeEl, getLanguage(url.pathname))
   })
 }
 
@@ -45,13 +37,13 @@ async function fetchSnippetFrom(url) {
   })
 }
 
-function createCodeBlock(snippet, start, stop, code, url) {
+function createCodeBlock(snippet, start, stop, code, language) {
   snippet
     .split('\n')
-    .slice(start, stop + 1)
+    .slice(start - 1, stop + 1)
     .map((line) => {
       const div = document.createElement('div')
-      div.innerHTML = highlightLine(line, getLanguage(url.pathname))
+      div.innerHTML = highlightLine(line, language)
       code.appendChild(div)
     })
 }
@@ -69,9 +61,9 @@ function getUrlFrom(permalink) {
  * @param {string} hash
  */
 function getLineNumbers(hash) {
-  res = hash.replace('#', '').split('-')
-  start = res[0].slice(1)
-  stop = res[1].slice(1)
+  const res = hash.replace('#', '').split('-')
+  const start = res[0].slice(1)
+  const stop = res[1].slice(1)
   return [Number(start), Number(stop)]
 }
 
@@ -80,6 +72,17 @@ function getLineNumbers(hash) {
  * @param {string} pathname
  */
 function getLanguage(pathname) {
+  const Language = {
+    js: 'javascript',
+    ts: 'typescript',
+    py: 'python',
+    go: 'go',
+    yml: 'yaml',
+    toml: 'toml',
+    json: 'json',
+    yaml: 'yaml',
+  }
+
   const parsed = pathname.split('/')
   const file = parsed[parsed.length - 1]
   const extension = file.split('.')[1]
