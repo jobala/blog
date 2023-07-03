@@ -81,12 +81,13 @@ function getLanguage(pathname) {
     toml: 'toml',
     json: 'json',
     yaml: 'yaml',
+    html: 'html',
   }
 
   const parsed = pathname.split('/')
   const file = parsed[parsed.length - 1]
   const extension = file.split('.')[1]
-  return Language[extension]
+  return Language[extension] ? Language[extension] : 'plaintext'
 }
 
 /**
