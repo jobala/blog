@@ -76,21 +76,23 @@ a:hover > h3 {
 
 h1 {
   font-family: 'helvetica neue';
-  font-weight: 300;
+  font-weight: 700;
+  font-size: 40px;
   color: #333;
-  margin-bottom: 20px;
+  margin-top: 70px;
+  margin-bottom: 40px;
 }
 
 #content > h2 {
   font-family: 'helvetica neue';
-  font-weight: 200;
+  font-weight: 700;
   color: #333;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
 }
 
 #content > h3 {
   font-family: 'helvetica neue';
-  font-weight: bold;
+  font-weight: 700;
   color: #333;
   margin-bottom: 5px;
 }
