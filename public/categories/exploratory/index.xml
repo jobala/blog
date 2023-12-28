@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>exploratory on Japheth Obala</title>
+    <link>https://www.japhethobala.com/categories/exploratory/</link>
+    <description>Recent content in exploratory on Japheth Obala</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 28 Dec 2023 10:12:42 +0300</lastBuildDate>
+    <atom:link href="https://www.japhethobala.com/categories/exploratory/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Functional Options</title>
+      <link>https://www.japhethobala.com/posts/technical/function-options/</link>
+      <pubDate>Thu, 28 Dec 2023 10:12:42 +0300</pubDate>
+      <guid>https://www.japhethobala.com/posts/technical/function-options/</guid>
+      <description>Narrative&#xA;Why is the pattern useful? Ensures backward compatibility, no change in public API When is it useful Creating config options What are the alternatives Constructor overloading Config Object How is it implemented ? Use uptrace for demonstration I don&amp;rsquo;t like how I gloss over functional parameters When writing a Go library there are a number of ways of enabling configuration by the user. You can use positional arguments, config structs or functional options.</description>
+    </item>
+  </channel>
+</rss>

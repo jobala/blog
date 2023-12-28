@@ -1,0 +1,87 @@
+<html lang="en">
+  <head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <link rel="stylesheet" href="/css/reset.css" />
+  <link rel="stylesheet" href="/css/font.css" />
+  <link rel="stylesheet" href="/css/butterick.css" />
+  <script defer language="javascript" type="text/javascript" src="/js/gh.js"></script>
+  <script src="https://unpkg.com/github-calendar@latest/dist/github-calendar.min.js"></script>
+  <link rel="stylesheet" href="https://unpkg.com/github-calendar@latest/dist/github-calendar-responsive.css" />
+  <link rel="stylesheet"
+      href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/default.min.css">  
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
+</head>
+
+  <body>
+    <header>
+  <nav>
+    <div class="home">
+      <a href="https://www.japhethobala.com/">
+        <h3>Home</h3>
+      </a>
+    </div>
+    
+    
+      
+        
+        <div class="vl"></div>
+        <div class="menu-item">
+          <a  href="/about/"><h3>About</h3></a>
+        </div>
+      
+    
+  </nav>
+</header>
+
+    <div id="content">
+      
+  <h1>Open Closed Principle</h1>
+  <p>A system is rigid when a change in requirements leads to a cascade of changes in the software. The open closed principle is the antidote for rigid software designs, when implemented properly it makes the software system flexible. It is the principle you should know.</p>
+<p>The principle states that software entities &ndash; modules, classes, functions &ndash; should be open for extension but closed for modifications.</p>
+<p>For a module that conforms to this principle it should be possible to add new features without modifying the module&rsquo;s source code or binaries. New features are added by adding new code and not by modifying existing working code. I know this is beginning to sound like a riddle, how can you add new features without modifying existing code?</p>
+<p>Let me show you</p>
+<p>Assuming we have a program that gets data from PDF files. The program has <strong>Client</strong> and <strong>PDFReader</strong> classes.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-typescript" data-lang="typescript"><span style="display:flex;"><span><span style="color:#000;font-weight:bold">class</span> PDFReader {
+</span></span><span style="display:flex;"><span>  readPDF() {
+</span></span><span style="display:flex;"><span>    <span style="color:#998;font-style:italic">// reads pdf
+</span></span></span><span style="display:flex;"><span><span style="color:#998;font-style:italic"></span>  }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-typescript" data-lang="typescript"><span style="display:flex;"><span><span style="color:#000;font-weight:bold">class</span> Client {
+</span></span><span style="display:flex;"><span>  getData() {
+</span></span><span style="display:flex;"><span>    pdfReader <span style="color:#000;font-weight:bold">=</span> PDFReader();
+</span></span><span style="display:flex;"><span>    <span style="color:#000;font-weight:bold">return</span> pdfReader.readPdf();
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>The client uses the PDFReader to get the contents of some pdf file.</p>
+<p>You get your paycheck and just when you&rsquo;re about to retire early in some island, your program manager tells you that customers are about to cancel your product because they can&rsquo;t read files from the internet! There&rsquo;s no way to add the new feature &ndash; reading files from the internet &ndash; without modifying the <strong>Client</strong> class because it violates the open closed principle.</p>
+<p>To conform to the principle we need to add a layer of abstraction. Since the client is concerned with reading data from some source, let&rsquo;s put that concern in an interface.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-typescript" data-lang="typescript"><span style="display:flex;"><span><span style="color:#000;font-weight:bold">interface</span> ClientInterface {
+</span></span><span style="display:flex;"><span>  read();
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>All readers need to implement this interface</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-typescript" data-lang="typescript"><span style="display:flex;"><span><span style="color:#000;font-weight:bold">class</span> PDFReader <span style="color:#000;font-weight:bold">implements</span> ClientInterface {
+</span></span><span style="display:flex;"><span>  read() {}
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">class</span> NetworkReader <span style="color:#000;font-weight:bold">implements</span> ClientInterface {
+</span></span><span style="display:flex;"><span>  read() {}
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>Then we update <strong>Client</strong> to use the abstraction instead of concrete classes.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-typescript" data-lang="typescript"><span style="display:flex;"><span><span style="color:#000;font-weight:bold">class</span> Client {
+</span></span><span style="display:flex;"><span>  getData(reader: <span style="color:#458;font-weight:bold">ClientInterface</span>) {
+</span></span><span style="display:flex;"><span>    <span style="color:#000;font-weight:bold">return</span> reader.read();
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>Now the client is open for extension but closed for modification. If we get a new requirement to read from a database, the Reader class will have to implement the <strong>ClientInterface</strong> and alas, we have new behavior with zero modification on the <strong>Client</strong> class. It conforms to the open closed principle.</p>
+<p>More important than applying the principle is knowing when to apply it. Conforming to the open closed principle is expensive as it takes effort and the layer of abstraction makes the design more complex. The principle should be limited to parts of the system that are likely to change.</p>
+
+
+    </div>
+    
+  </body>
+  <script>
+    
+    GitHubCalendar(".calendar", "jobala", { responsive: true });
+  </script>
+</html>

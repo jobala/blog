@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>solid principles on Japheth Obala</title>
+    <link>https://www.japhethobala.com/categories/solid-principles/</link>
+    <description>Recent content in solid principles on Japheth Obala</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 07 Feb 2021 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://www.japhethobala.com/categories/solid-principles/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Open Closed Principle</title>
+      <link>https://www.japhethobala.com/posts/technical/open-closed/</link>
+      <pubDate>Sun, 07 Feb 2021 00:00:00 +0000</pubDate>
+      <guid>https://www.japhethobala.com/posts/technical/open-closed/</guid>
+      <description>A system is rigid when a change in requirements leads to a cascade of changes in the software. The open closed principle is the antidote for rigid software designs, when implemented properly it makes the software system flexible. It is the principle you should know.&#xA;The principle states that software entities &amp;ndash; modules, classes, functions &amp;ndash; should be open for extension but closed for modifications.&#xA;For a module that conforms to this principle it should be possible to add new features without modifying the module&amp;rsquo;s source code or binaries.</description>
+    </item>
+    <item>
+      <title>Single Responsibility Principle</title>
+      <link>https://www.japhethobala.com/posts/technical/single-responsibility/</link>
+      <pubDate>Sat, 23 Jan 2021 00:00:00 +0000</pubDate>
+      <guid>https://www.japhethobala.com/posts/technical/single-responsibility/</guid>
+      <description>Most people think that the single responsibility principle means that a module should do one thing. This is a common misunderstanding of the principle and leads to a fragmented codebase with thin classes, with one or two methods, littering the codebase as we can see in this StackOverflow question.&#xA;While researching about the subject, I came across SRP is a hoax which in my opinion embodies the misunderstanding of the single responsibility principle.</description>
+    </item>
+  </channel>
+</rss>

@@ -1,0 +1,116 @@
+<html lang="en">
+  <head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <link rel="stylesheet" href="/css/reset.css" />
+  <link rel="stylesheet" href="/css/font.css" />
+  <link rel="stylesheet" href="/css/butterick.css" />
+  <script defer language="javascript" type="text/javascript" src="/js/gh.js"></script>
+  <script src="https://unpkg.com/github-calendar@latest/dist/github-calendar.min.js"></script>
+  <link rel="stylesheet" href="https://unpkg.com/github-calendar@latest/dist/github-calendar-responsive.css" />
+  <link rel="stylesheet"
+      href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/default.min.css">  
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
+</head>
+
+  <body>
+    <header>
+  <nav>
+    <div class="home">
+      <a href="https://www.japhethobala.com/">
+        <h3>Home</h3>
+      </a>
+    </div>
+    
+    
+      
+        
+        <div class="vl"></div>
+        <div class="menu-item">
+          <a  href="/about/"><h3>About</h3></a>
+        </div>
+      
+    
+  </nav>
+</header>
+
+    <div id="content">
+      
+  <h1>Functional Options</h1>
+  <p>Narrative</p>
+<ul>
+<li>Why is the pattern useful?
+<ul>
+<li>Ensures backward compatibility, no change in public API</li>
+</ul>
+</li>
+<li>When is it useful
+<ul>
+<li>Creating config options</li>
+</ul>
+</li>
+<li>What are the alternatives
+<ul>
+<li>Constructor overloading</li>
+<li>Config Object</li>
+</ul>
+</li>
+<li>How is it implemented ?
+<ul>
+<li>Use uptrace for demonstration
+I don&rsquo;t like how I gloss over functional parameters</li>
+</ul>
+</li>
+</ul>
+<p>When writing a Go library there are a number of ways of enabling configuration by the user. You can use positional arguments, config structs or functional options. If you use positional arguments you will end up with a constructor overload problem and config structs can be error prone because zero values might not mean what you think they mean. This article demonstrates functional options using the implementation from <a href="github.com/uptrace/uptrace-go">uptrace-go</a>.</p>
+<p>With functional options, the constructor takes an array of functions.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span>uptrace.<span style="color:#900;font-weight:bold">ConfigureOpenTelemetry</span>(
+</span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">...</span>
+</span></span><span style="display:flex;"><span>uptrace.<span style="color:#900;font-weight:bold">WithDSN</span>(<span style="color:#d14">&#34;http://xyz.com&#34;</span>)
+</span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">...</span>
+</span></span><span style="display:flex;"><span>)
+</span></span></code></pre></div><p>Entry Point
+
+
+<pre class="gh"> https://github.com/uptrace/uptrace-go/blob/40328f2437fe21511eb2f163a1ce63c8fe473f99/uptrace/uptrace.go#L24-L24 </pre>
+
+</p>
+
+
+<pre class="gh"> https://github.com/uptrace/uptrace-go/blob/40328f2437fe21511eb2f163a1ce63c8fe473f99/uptrace/uptrace.go#L30-L30 </pre>
+
+
+<p>Option Interface
+
+
+<pre class="gh"> https://github.com/uptrace/uptrace-go/blob/40328f2437fe21511eb2f163a1ce63c8fe473f99/uptrace/config.go#L92-L94 </pre>
+
+</p>
+<p>Option User Defined Type</p>
+
+
+<pre class="gh"> https://github.com/uptrace/uptrace-go/blob/40328f2437fe21511eb2f163a1ce63c8fe473f99/uptrace/config.go#L96-L96 </pre>
+
+
+<p>Adding Apply To The User defined type</p>
+
+
+<pre class="gh"> https://github.com/uptrace/uptrace-go/blob/40328f2437fe21511eb2f163a1ce63c8fe473f99/uptrace/config.go#L98-L100 </pre>
+
+
+<p>Invocation</p>
+
+
+<pre class="gh"> https://github.com/uptrace/uptrace-go/blob/40328f2437fe21511eb2f163a1ce63c8fe473f99/uptrace/config.go#L106-L110 </pre>
+
+
+
+
+    </div>
+    
+  </body>
+  <script>
+    
+    GitHubCalendar(".calendar", "jobala", { responsive: true });
+  </script>
+</html>

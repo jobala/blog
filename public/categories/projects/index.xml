@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>projects on Japheth Obala</title>
+    <link>https://www.japhethobala.com/categories/projects/</link>
+    <description>Recent content in projects on Japheth Obala</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 24 Jun 2023 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://www.japhethobala.com/categories/projects/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Embedded Github Snippets</title>
+      <link>https://www.japhethobala.com/posts/technical/embedded-gh-snippets/</link>
+      <pubDate>Sat, 24 Jun 2023 00:00:00 +0000</pubDate>
+      <guid>https://www.japhethobala.com/posts/technical/embedded-gh-snippets/</guid>
+      <description>I wanted to make adding snippets to my articles effortless instead of copy pasting, maintaining different versions of the same thing or worse screenshoting snippets. Gists don&amp;rsquo;t cut it and their styling wouldn&amp;rsquo;t have felt native to my blog so I decided to rollout my own solution.&#xA;I wanted an experience similar to Github Embedded Snippets, where I could paste a permalink and the snippet gets rendered. For example putting &amp;lt;permalink&amp;gt; in an article should render the snippet below.</description>
+    </item>
+  </channel>
+</rss>

@@ -1,0 +1,81 @@
+<html lang="en">
+  <head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <link rel="stylesheet" href="/css/reset.css" />
+  <link rel="stylesheet" href="/css/font.css" />
+  <link rel="stylesheet" href="/css/butterick.css" />
+  <script defer language="javascript" type="text/javascript" src="/js/gh.js"></script>
+  <script src="https://unpkg.com/github-calendar@latest/dist/github-calendar.min.js"></script>
+  <link rel="stylesheet" href="https://unpkg.com/github-calendar@latest/dist/github-calendar-responsive.css" />
+  <link rel="stylesheet"
+      href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/default.min.css">  
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
+</head>
+
+  <body>
+    <header>
+  <nav>
+    <div class="home">
+      <a href="https://www.japhethobala.com/">
+        <h3>Home</h3>
+      </a>
+    </div>
+    
+    
+      
+        
+        <div class="vl"></div>
+        <div class="menu-item">
+          <a  href="/about/"><h3>About</h3></a>
+        </div>
+      
+    
+  </nav>
+</header>
+
+    <div id="content">
+      
+  <h1>Commando Cli Framework</h1>
+  <p>I spent the better part of 2021 working msgraph-cli and I learnt a lot despite  a change in strategy that meant me working on something else. <a href="https://github.com/jobala/commando">Commando</a> is a crystallisation of the lessons I learnt.</p>
+<h2 id="declarative-command-grouping">Declarative Command Grouping</h2>
+<p>Commando&rsquo;s approach to command grouping is heavily influenced by the fact that CLIs like SDKs are wrappers for HTTP APIs. Therefore, I wanted a one-to-one mapping between an api url and command group definition. This led me to a declarative api for grouping commands. So, if a user wants to create the following command grouping in <a href="https://github.com/jobala/commando">Commando</a>,</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span><span style="color:#008080">$cli</span> parent child grand-child
+</span></span></code></pre></div><p>They simply do the following</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span>cli.<span style="color:#900;font-weight:bold">CommandGroup</span>(<span style="color:#d14">&#34;parent first-child&#34;</span>).
+</span></span><span style="display:flex;"><span>    <span style="color:#900;font-weight:bold">WithCommand</span>(commando.<span style="color:#900;font-weight:bold">Command</span>(<span style="color:#d14">&#34;grand-child&#34;</span>, handler))
+</span></span></code></pre></div><p>It is possible to add more grand-children to the first-child command group by chaining <strong>WithCommand</strong> calls.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span>cli.<span style="color:#900;font-weight:bold">CommandGroup</span>(<span style="color:#d14">&#34;parent first-child&#34;</span>).
+</span></span><span style="display:flex;"><span>    <span style="color:#900;font-weight:bold">WithCommand</span>(commando.<span style="color:#900;font-weight:bold">Command</span>(<span style="color:#d14">&#34;grand-child&#34;</span>), handlerFunc)).
+</span></span><span style="display:flex;"><span>    <span style="color:#900;font-weight:bold">WithCommand</span>(commando.<span style="color:#900;font-weight:bold">Command</span>(<span style="color:#d14">&#34;second-grand-child&#34;</span>, handlerFunc))
+</span></span></code></pre></div><p>And adding a second-child command group to parent is as simple as creating another command group.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span>cli.<span style="color:#900;font-weight:bold">CommandGroup</span>(<span style="color:#d14">&#34;parent second-child&#34;</span>).
+</span></span><span style="display:flex;"><span>    <span style="color:#900;font-weight:bold">WithCommand</span>(commando.<span style="color:#900;font-weight:bold">Command</span>(<span style="color:#d14">&#34;grand-child&#34;</span>, handlerFunc))
+</span></span></code></pre></div><h2 id="command-arguments">Command Arguments</h2>
+<p><a href="https://github.com/jobala/commando">Commando</a> aims to do as much as possible for the user and therefore it will infer a command&rsquo;s flags from its handler function. To do this reliably, <a href="https://github.com/jobala/commando">Commando</a> depends on a convention where the handler function has a single struct argument whose fields will be used as flags for the command.</p>
+<p>For example, for the command below</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span><span style="color:#008080">$cli</span> parent child grand-child --name &lt;name&gt; --age &lt;age&gt;
+</span></span></code></pre></div><p>The developer has to define the handler function as follows</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span>cli.<span style="color:#900;font-weight:bold">CommandGroup</span>(<span style="color:#d14">&#34;parent first-child&#34;</span>).
+</span></span><span style="display:flex;"><span>    <span style="color:#900;font-weight:bold">WithCommand</span>(commando.<span style="color:#900;font-weight:bold">Command</span>(<span style="color:#d14">&#34;grand-child&#34;</span>, handler))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">type</span> Args <span style="color:#000;font-weight:bold">struct</span> {
+</span></span><span style="display:flex;"><span>    Name <span style="color:#458;font-weight:bold">string</span>
+</span></span><span style="display:flex;"><span>    Age  <span style="color:#458;font-weight:bold">int</span>
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">func</span> <span style="color:#900;font-weight:bold">handlerFunc</span>(args Args) {
+</span></span><span style="display:flex;"><span>    <span style="color:#998;font-style:italic">// do something with args and print result
+</span></span></span><span style="display:flex;"><span><span style="color:#998;font-style:italic"></span>}
+</span></span></code></pre></div><h2 id="contributing-to-commando">Contributing To Commando</h2>
+<p>At the time of this writing <a href="https://github.com/jobala/commando">Commando</a> is a MVP and there&rsquo;s a lot to do before it is production ready. Play with it, create issues and if you feel inspired make a pull request.</p>
+
+
+    </div>
+    
+  </body>
+  <script>
+    
+    GitHubCalendar(".calendar", "jobala", { responsive: true });
+  </script>
+</html>

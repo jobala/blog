@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Categories on Japheth Obala</title>
+    <link>https://www.japhethobala.com/categories/</link>
+    <description>Recent content in Categories on Japheth Obala</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 28 Dec 2023 10:12:42 +0300</lastBuildDate>
+    <atom:link href="https://www.japhethobala.com/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>exploratory</title>
+      <link>https://www.japhethobala.com/categories/exploratory/</link>
+      <pubDate>Thu, 28 Dec 2023 10:12:42 +0300</pubDate>
+      <guid>https://www.japhethobala.com/categories/exploratory/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>go</title>
+      <link>https://www.japhethobala.com/categories/go/</link>
+      <pubDate>Thu, 28 Dec 2023 10:12:42 +0300</pubDate>
+      <guid>https://www.japhethobala.com/categories/go/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>projects</title>
+      <link>https://www.japhethobala.com/categories/projects/</link>
+      <pubDate>Sat, 24 Jun 2023 00:00:00 +0000</pubDate>
+      <guid>https://www.japhethobala.com/categories/projects/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>developer-experience</title>
+      <link>https://www.japhethobala.com/categories/developer-experience/</link>
+      <pubDate>Sun, 30 Oct 2022 00:00:00 +0000</pubDate>
+      <guid>https://www.japhethobala.com/categories/developer-experience/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>engineering</title>
+      <link>https://www.japhethobala.com/categories/engineering/</link>
+      <pubDate>Sun, 30 Oct 2022 00:00:00 +0000</pubDate>
+      <guid>https://www.japhethobala.com/categories/engineering/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>cli</title>
+      <link>https://www.japhethobala.com/categories/cli/</link>
+      <pubDate>Sat, 03 Sep 2022 00:00:00 +0000</pubDate>
+      <guid>https://www.japhethobala.com/categories/cli/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>solid principles</title>
+      <link>https://www.japhethobala.com/categories/solid-principles/</link>
+      <pubDate>Sun, 07 Feb 2021 00:00:00 +0000</pubDate>
+      <guid>https://www.japhethobala.com/categories/solid-principles/</guid>
+      <description></description>
+    </item>
+  </channel>
+</rss>

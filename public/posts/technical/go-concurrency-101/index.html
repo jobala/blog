@@ -1,0 +1,93 @@
+<html lang="en">
+  <head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <link rel="stylesheet" href="/css/reset.css" />
+  <link rel="stylesheet" href="/css/font.css" />
+  <link rel="stylesheet" href="/css/butterick.css" />
+  <script defer language="javascript" type="text/javascript" src="/js/gh.js"></script>
+  <script src="https://unpkg.com/github-calendar@latest/dist/github-calendar.min.js"></script>
+  <link rel="stylesheet" href="https://unpkg.com/github-calendar@latest/dist/github-calendar-responsive.css" />
+  <link rel="stylesheet"
+      href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/default.min.css">  
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
+</head>
+
+  <body>
+    <header>
+  <nav>
+    <div class="home">
+      <a href="https://www.japhethobala.com/">
+        <h3>Home</h3>
+      </a>
+    </div>
+    
+    
+      
+        
+        <div class="vl"></div>
+        <div class="menu-item">
+          <a  href="/about/"><h3>About</h3></a>
+        </div>
+      
+    
+  </nav>
+</header>
+
+    <div id="content">
+      
+  <h1>Go Concurrency 101</h1>
+  <h2 id="goroutines">Goroutines</h2>
+<p>Goroutines enable concurrent behaviour in Go programs. To make a function concurrent &ndash; non blocking &ndash; simply place the
+go keyword before the function invocation.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-Go" data-lang="Go"><span style="display:flex;"><span><span style="color:#000;font-weight:bold">func</span> <span style="color:#900;font-weight:bold">helloWorld</span>() {
+</span></span><span style="display:flex;"><span>  fmt.<span style="color:#900;font-weight:bold">Println</span>(<span style="color:#d14">&#34;Hello, World&#34;</span>)
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#998;font-style:italic">// invoke the function concurrently
+</span></span></span><span style="display:flex;"><span><span style="color:#998;font-style:italic"></span><span style="color:#000;font-weight:bold">go</span> <span style="color:#900;font-weight:bold">helloWorld</span>()
+</span></span></code></pre></div><h2 id="channels">Channels</h2>
+<p>Goroutines use channels to communicate. The type of data a channel can transfer is determined at channel creation time.
+The snippet below creates an integer channel <code>telephoneLine</code> and passes the channel to the <code>neighbour</code> goroutine.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-Go" data-lang="Go"><span style="display:flex;"><span>telephoneLine <span style="color:#000;font-weight:bold">:=</span> <span style="color:#0086b3">make</span>(<span style="color:#000;font-weight:bold">chan</span> <span style="color:#458;font-weight:bold">int</span>)
+</span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">go</span> <span style="color:#900;font-weight:bold">neighbour</span>(telephoneLine)
+</span></span></code></pre></div><p>Then the neighbour can communicate to us through the <code>telephoneLine</code> channel. In the code below, the neighbour sends us
+a message <code>1</code> and closes the <code>telephoneLine</code>. It is idiomatic for the goroutine that writes to a channel to close it
+when done.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-Go" data-lang="Go"><span style="display:flex;"><span><span style="color:#000;font-weight:bold">func</span> <span style="color:#900;font-weight:bold">neighbour</span>(telephoneLine <span style="color:#000;font-weight:bold">chan</span><span style="color:#000;font-weight:bold">&lt;-</span> <span style="color:#458;font-weight:bold">int</span>) {
+</span></span><span style="display:flex;"><span>  telephoneLine <span style="color:#000;font-weight:bold">&lt;-</span> <span style="color:#099">1</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#0086b3">close</span>(telephoneLine)
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>We receive the message by reading from <code>telephoneLine</code>.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-Go" data-lang="Go"><span style="display:flex;"><span>msg <span style="color:#000;font-weight:bold">:=</span> <span style="color:#000;font-weight:bold">&lt;-</span> telephoneLine
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#998;font-style:italic">// prints 1
+</span></span></span><span style="display:flex;"><span><span style="color:#998;font-style:italic"></span>fmt.<span style="color:#900;font-weight:bold">Println</span>(msg)
+</span></span></code></pre></div><h2 id="select">Select</h2>
+<p>Goroutines deadlock when not accessed in the same order. Assuming we have two telephone lines <code>line1</code> and <code>line2</code> and in
+a goroutine we first write to <code>line1</code> then read from <code>line2</code>.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-Go" data-lang="Go"><span style="display:flex;"><span>line1 <span style="color:#000;font-weight:bold">:=</span> <span style="color:#0086b3">make</span>(<span style="color:#000;font-weight:bold">chan</span> <span style="color:#458;font-weight:bold">int</span>)
+</span></span><span style="display:flex;"><span>line2 <span style="color:#000;font-weight:bold">:=</span> <span style="color:#0086b3">make</span>(<span style="color:#000;font-weight:bold">chan</span> <span style="color:#458;font-weight:bold">int</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">go</span> <span style="color:#000;font-weight:bold">func</span>() {
+</span></span><span style="display:flex;"><span>  line1 <span style="color:#000;font-weight:bold">&lt;-</span> <span style="color:#099">1</span>
+</span></span><span style="display:flex;"><span>  msg <span style="color:#000;font-weight:bold">&lt;-</span> line2
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>Then if we write to <code>line2</code> and read from <code>line1</code> in another goroutine the program deadlocks and panics.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-Go" data-lang="Go"><span style="display:flex;"><span>line2 <span style="color:#000;font-weight:bold">&lt;-</span> <span style="color:#099">2</span>
+</span></span><span style="display:flex;"><span>msg <span style="color:#000;font-weight:bold">:=</span> <span style="color:#000;font-weight:bold">&lt;-</span> line1
+</span></span></code></pre></div><p>However, with the <strong>select</strong> keyword this won&rsquo;t happen because it executes whatever case that can proceed.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-Go" data-lang="Go"><span style="display:flex;"><span><span style="color:#000;font-weight:bold">select</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#000;font-weight:bold">case</span> line2 <span style="color:#000;font-weight:bold">&lt;-</span> <span style="color:#099">2</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#000;font-weight:bold">case</span> msg <span style="color:#000;font-weight:bold">:=</span> <span style="color:#000;font-weight:bold">&lt;-</span> line1:
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div>
+
+    </div>
+    
+  </body>
+  <script>
+    
+    GitHubCalendar(".calendar", "jobala", { responsive: true });
+  </script>
+</html>

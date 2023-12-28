@@ -1,0 +1,146 @@
+/* For mobile phones: */
+header {
+  width: 100%;
+}
+
+#content {
+  width: 100%;
+  text-align: justify;
+}
+
+.calendar-container {
+  width: 100%;
+}
+
+.calendar {
+  width: --webkit-fill-available;
+}
+
+/*for tablets*/
+@media only screen and (min-width: 768px) {
+  header {
+    width: 80%;
+  }
+
+  #content {
+    width: 80%;
+    text-align: justify;
+  }
+
+  .calendar-container {
+    width: 80ch;
+  }
+}
+
+/* for desktop: */
+@media only screen and (min-width: 1024px) {
+  header {
+    width: 640px;
+  }
+
+  #content {
+    width: 80ch;
+    text-align: justify;
+  }
+
+  .calendar-container {
+    width: 80ch;
+  }
+}
+
+body {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+nav {
+  background: #d7edf5;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: 30px;
+  font-family: 'helvetica neue';
+  padding-left: 5px;
+}
+
+a > h3 {
+  font-family: 'helvetica neue';
+  font-weight: bold;
+  font-size: 15;
+}
+
+a:hover > h3 {
+  text-decoration: underline;
+}
+
+h1 {
+  font-family: 'helvetica neue';
+  font-weight: 700;
+  font-size: 40px;
+  color: #333;
+  margin-top: 70px;
+  margin-bottom: 40px;
+}
+
+#content > h2 {
+  font-family: 'helvetica neue';
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+#content > h3 {
+  font-family: 'helvetica neue';
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 5px;
+}
+
+.archive > ul {
+  list-style: none;
+  padding-inline-start: 0px;
+  font-size: 15px;
+  font-family: 'roboto slab';
+}
+
+ul > li {
+  margin-bottom: 5px;
+}
+
+main > h3 {
+  font-family: 'Helvetica Neue';
+  font-weight: 300;
+  color: #333;
+  margin-bottom: 5px;
+  border-bottom: 1px dotted #333;
+}
+
+p {
+  font-family: 'Roboto Slab';
+  font-size: 16px;
+  margin-top: 10px;
+  color: #6b6b6b;
+}
+
+.vl {
+  border-left: 1.5px solid black;
+  height: 16px;
+  margin: 0 5px 0 5px;
+}
+
+.snippet-header {
+  padding-left: 24px;
+  background: #f2f8fa;
+  display: flex;
+  height: 30px;
+  align-items: center;
+}
+
+.snippet-header > a:hover {
+  text-decoration: underline;
+}
+
+.snippet-container {
+  padding: 16px 0px 24px 24px;
+}

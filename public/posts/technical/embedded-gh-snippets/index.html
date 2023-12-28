@@ -1,0 +1,122 @@
+<html lang="en">
+  <head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <link rel="stylesheet" href="/css/reset.css" />
+  <link rel="stylesheet" href="/css/font.css" />
+  <link rel="stylesheet" href="/css/butterick.css" />
+  <script defer language="javascript" type="text/javascript" src="/js/gh.js"></script>
+  <script src="https://unpkg.com/github-calendar@latest/dist/github-calendar.min.js"></script>
+  <link rel="stylesheet" href="https://unpkg.com/github-calendar@latest/dist/github-calendar-responsive.css" />
+  <link rel="stylesheet"
+      href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/default.min.css">  
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
+</head>
+
+  <body>
+    <header>
+  <nav>
+    <div class="home">
+      <a href="https://www.japhethobala.com/">
+        <h3>Home</h3>
+      </a>
+    </div>
+    
+    
+      
+        
+        <div class="vl"></div>
+        <div class="menu-item">
+          <a  href="/about/"><h3>About</h3></a>
+        </div>
+      
+    
+  </nav>
+</header>
+
+    <div id="content">
+      
+  <h1>Embedded Github Snippets</h1>
+  <p>I wanted to make adding snippets to my articles effortless instead of copy pasting, maintaining different versions of
+the same thing or worse screenshoting snippets.
+<a href="https://docs.github.com/en/get-started/writing-on-github/editing-and-sharing-content-with-gists/creating-gists">Gists</a>
+don&rsquo;t cut it and their styling wouldn&rsquo;t have felt native to my blog so I decided to rollout my own solution.</p>
+<p>I wanted an experience similar to
+<a href="https://github.blog/2017-08-15-introducing-embedded-code-snippets/">Github Embedded Snippets</a>, where I could paste a
+<a href="https://github.com/jobala/picasso/blob/4c195969620aee03742f9283c0a08d4b5a123b0d/scheduler/schedule.go#L10-L20">permalink</a>
+and the snippet gets rendered. For example putting <code>&lt;permalink&gt;</code> in an article should render the snippet below.</p>
+
+
+<pre class="gh"> https://github.com/jobala/picasso/blob/4c195969620aee03742f9283c0a08d4b5a123b0d/scheduler/schedule.go#L10-L20 </pre>
+
+
+<p>By the way, the snippet above demonstrates this feature, it is the real thing, look at this article&rsquo;s source code to
+confirm.</p>
+<p>I knew I could use <a href="https://gohugo.io/content-management/shortcodes/">shortcodes</a> for this sort of thing since my blog
+is based on Hugo. I was planed to implement the snippet embedding as a Hugo shortcode using the templating engine.
+However, I learnt very quickly that this won&rsquo;t be possible because Hugo only
+<a href="https://gohugo.io/content-management/shortcodes/">supports <code>getJSON</code> and <code>getCSV</code></a> for remote data fetching and I
+needed to fetch text files. This felt like the end of the road but then a thought occured to me, what if I supplement
+the shortcode functionality with javascript? I could use the shortcode to get the permalink and javascript to fetch the
+text file and create the code block.</p>
+<p>Hugo shortcodes are a similar to functions having a name and arguments and to create one I created <code>gh.html</code> file in the
+<code>shortcodes</code> directory and its definition is as shown below.</p>
+
+
+<pre class="gh"> https://github.com/jobala/blog/blob/d6e46dfe44f5b3faaa72ea1721331bfe2e24c8ff/themes/butterick/layouts/shortcodes/gh.html#L3-L5 </pre>
+
+
+<p><code>.Get 0</code> gets the first argument passed to the shortcode. This shortcode simples get the permalink and set it as the
+inner html for the pre tag. Putting <code>{{gh &lt;permalink&gt;}}</code> in a content file will &lsquo;call&rsquo; the shortcode and pass the
+permalink as an argument.</p>
+<p>To render snippets for each shortcode in a content file, I first get all of them by class name.</p>
+
+
+<pre class="gh"> https://github.com/jobala/blog/blob/d6e46dfe44f5b3faaa72ea1721331bfe2e24c8ff/themes/butterick/static/js/gh.js#L1-L1 </pre>
+
+
+<p>And then for each shortcode I extracted the permalink from which I got the snippet path and range &ndash; first and last line
+&ndash; for the snippet.</p>
+
+
+<pre class="gh"> https://github.com/jobala/blog/blob/d6e46dfe44f5b3faaa72ea1721331bfe2e24c8ff/themes/butterick/static/js/gh.js#L4-L6 </pre>
+
+
+<p>Next I created the required html elements, <code>codeEl</code> contains a block of code, <code>linkToSnippet</code> links out to Github, you
+can try this by clicking on the file path in the snippet below. <code>snippetHeader</code> contains the <code>linkToSnippet</code> and
+<code>snippetContainer</code> is the parent element for <code>codeEl</code> and <code>snippetHeader</code>.</p>
+
+
+<pre class="gh"> https://github.com/jobala/blog/blob/d6e46dfe44f5b3faaa72ea1721331bfe2e24c8ff/themes/butterick/static/js/gh.js#L9-L12 </pre>
+
+
+<p>The snippet below, shows how these elements were nested.</p>
+
+
+<pre class="gh"> https://github.com/jobala/blog/blob/master/themes/butterick/static/js/gh.js#L22-L27 </pre>
+
+
+<p>After creating the elements I set class attributes so that I could style them later on.</p>
+
+
+<pre class="gh"> https://github.com/jobala/blog/blob/d6e46dfe44f5b3faaa72ea1721331bfe2e24c8ff/themes/butterick/static/js/gh.js#L15-L19 </pre>
+
+
+<p>Finally I fetched the snippet and create a code block.</p>
+
+
+<pre class="gh"> https://github.com/jobala/blog/blob/d6e46dfe44f5b3faaa72ea1721331bfe2e24c8ff/themes/butterick/static/js/gh.js#L29-L30 </pre>
+
+
+<p>One of the risks with this approach is the over reliance on Github as a snippet source because if Github goes down so do
+my snippets. However, the likelihood of Github failing is low, so the risk is minimal.</p>
+
+
+    </div>
+    
+  </body>
+  <script>
+    
+    GitHubCalendar(".calendar", "jobala", { responsive: true });
+  </script>
+</html>

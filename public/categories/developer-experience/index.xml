@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>developer-experience on Japheth Obala</title>
+    <link>https://www.japhethobala.com/categories/developer-experience/</link>
+    <description>Recent content in developer-experience on Japheth Obala</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 30 Oct 2022 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://www.japhethobala.com/categories/developer-experience/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>From Javascript To Typescript</title>
+      <link>https://www.japhethobala.com/posts/technical/js-to-ts/</link>
+      <pubDate>Sun, 30 Oct 2022 00:00:00 +0000</pubDate>
+      <guid>https://www.japhethobala.com/posts/technical/js-to-ts/</guid>
+      <description>The advantages of Typescript over Javascript are obvious and little convincing is required to persuade a team to migrate from Javascript to Typescript. For historical reasons netlify/build was in Javascript and we decided to migrate it to Typescript in an effort to improve developer experience.&#xA;netlify/build is an opensource monorepo and receives frequent contributions. This constrained us from performing a big bang migration which has the risk of large merge conflicts.</description>
+    </item>
+  </channel>
+</rss>
