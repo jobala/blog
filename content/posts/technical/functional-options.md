@@ -9,7 +9,7 @@ categories:
 
 The functional options pattern is a mechanism for providing flexible configuration to a Go library and in this article I will be exploring how it is implemented in [uptrace-go](github.com/uptrace/uptrace-go). There are other less flexible techniques for achieving the same goal like config structs and positional arguments which I won't cover but are good to know.
 
-As you can tell from the title, functions are central to the implementation of this pattern and [uptrace-go](github.com/uptrace/uptrace-go) it all starts with the `option` function type. Any function that matches the signature `func(config *config)` is of type `option`.
+As you can tell from the title, functions are central to the implementation of this pattern and in [uptrace-go](github.com/uptrace/uptrace-go) it all starts with the `option` function type. Any function that matches the signature `func(config *config)` is of type `option`.
 
 {{< gh "https://github.com/uptrace/uptrace-go/blob/40328f2437fe21511eb2f163a1ce63c8fe473f99/uptrace/config.go#L96-L96" >}}
 
