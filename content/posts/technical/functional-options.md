@@ -4,7 +4,7 @@ date: 2023-12-28T10:12:42+03:00
 slug: functional-options
 categories:
   - go
-  - exploratory
+  - technical
 ---
 
 The functional options pattern is a mechanism for providing flexible configuration to a Go library and in this article I will be exploring how it is implemented in [uptrace-go](github.com/uptrace/uptrace-go). There are other less flexible techniques for achieving the same goal like config structs and positional arguments which I won't cover but are good to know.
