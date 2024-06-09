@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Go on Japheth Obala</title>
-    <link>http://localhost:1313/categories/go/</link>
-    <description>Recent content in Go on Japheth Obala</description>
+    <title>Technical on Japheth Obala</title>
+    <link>http://localhost:1313/categories/technical/</link>
+    <description>Recent content in Technical on Japheth Obala</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate>Sun, 10 Mar 2024 14:22:09 +0300</lastBuildDate>
-    <atom:link href="http://localhost:1313/categories/go/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/categories/technical/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Profiling In Go</title>
       <link>http://localhost:1313/posts/technical/profiling-go/</link>
@@ -21,13 +21,6 @@
       <pubDate>Thu, 28 Dec 2023 10:12:42 +0300</pubDate>
       <guid>http://localhost:1313/posts/technical/functional-options/</guid>
       <description>The functional options pattern is a mechanism for providing flexible configuration to a Go library and in this article I will be exploring how it is implemented in uptrace-go. There are other less flexible techniques for achieving the same goal like config structs and positional arguments which I won&amp;rsquo;t cover but are good to know.&#xA;As you can tell from the title, functions are central to the implementation of this pattern and in uptrace-go it all starts with the option function type.</description>
-    </item>
-    <item>
-      <title>Go Concurrency 101</title>
-      <link>http://localhost:1313/posts/technical/go-concurrency-101/</link>
-      <pubDate>Sat, 11 Mar 2023 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/technical/go-concurrency-101/</guid>
-      <description>Goroutines Goroutines enable concurrent behaviour in Go programs. To make a function concurrent &amp;ndash; non blocking &amp;ndash; simply place the go keyword before the function invocation.&#xA;func helloWorld() { fmt.Println(&amp;#34;Hello, World&amp;#34;) } // invoke the function concurrently go helloWorld() Channels Goroutines use channels to communicate. The type of data a channel can transfer is determined at channel creation time. The snippet below creates an integer channel telephoneLine and passes the channel to the neighbour goroutine.</description>
     </item>
   </channel>
 </rss>

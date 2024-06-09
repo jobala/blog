@@ -2,66 +2,87 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Japheth Obala</title>
-    <link>https://www.japhethobala.com/</link>
+    <link>http://localhost:1313/</link>
     <description>Recent content on Japheth Obala</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 28 Dec 2023 10:12:42 +0300</lastBuildDate>
-    <atom:link href="https://www.japhethobala.com/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 09 Jun 2024 19:04:09 +0300</lastBuildDate>
+    <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Intellectual Life</title>
+      <link>http://localhost:1313/posts/philosophy/intellectual-life/</link>
+      <pubDate>Sun, 09 Jun 2024 19:04:09 +0300</pubDate>
+      <guid>http://localhost:1313/posts/philosophy/intellectual-life/</guid>
+      <description>The word &amp;ldquo;vocation&amp;rdquo; is derived from the Latin word &amp;ldquo;vocare,&amp;rdquo; meaning &amp;ldquo;to call.&amp;rdquo; Among the various paths individuals are summoned to follow, the calling to an intellectual life stands out as a pursuit of knowledge and understanding through continuous and methodical effort. This article explores the significance and challenges of dedicating oneself to an intellectual life, emphasizing the disciplined study and sharing of knowledge.&#xA;Few endeavors are as fulfilling as contributing to humanity&amp;rsquo;s progress through intellectual inquiry.</description>
+    </item>
+    <item>
+      <title>Philosophy</title>
+      <link>http://localhost:1313/posts/philosophy/what-is-philosophy/</link>
+      <pubDate>Sun, 10 Mar 2024 14:58:53 +0300</pubDate>
+      <guid>http://localhost:1313/posts/philosophy/what-is-philosophy/</guid>
+      <description>My exposure to philosophy was much like the beginning of a good discovery, accidental, and I have become enamoured by it. My enthusiasm for philosophy far outweighs my acquitance with it and I might write things that you disagree with but that is fine. I am writing for myself, to look back and see how far I have come in my understanding and practise of philosophy.&#xA;There isn&amp;rsquo;t a better well to quench the thirst of philosophy than that of Socrates and that&amp;rsquo;s where I went to start.</description>
+    </item>
+    <item>
+      <title>Profiling In Go</title>
+      <link>http://localhost:1313/posts/technical/profiling-go/</link>
+      <pubDate>Sun, 10 Mar 2024 14:22:09 +0300</pubDate>
+      <guid>http://localhost:1313/posts/technical/profiling-go/</guid>
+      <description>It is possible to write slow programs despite increasingly powerful computers and profiling helps you identify slow sections of your program.&#xA;Assuming we have two functions that calculate the square of their index and adds the result to a slice, how do we know which is faster ?&#xA;func CalculateSquares(n int) []int { squares := make([]int, n) for i := 1; i &amp;lt;= n; i++ { squares[i-1] = i * i } return squares } func CalculateSquaresMath(n int) []int { squares := make([]int, n) for i := 1; i &amp;lt;= n; i++ { squares[i-1] = int(math.</description>
+    </item>
     <item>
       <title>Functional Options</title>
-      <link>https://www.japhethobala.com/posts/technical/function-options/</link>
+      <link>http://localhost:1313/posts/technical/functional-options/</link>
       <pubDate>Thu, 28 Dec 2023 10:12:42 +0300</pubDate>
-      <guid>https://www.japhethobala.com/posts/technical/function-options/</guid>
-      <description>Narrative&#xA;Why is the pattern useful? Ensures backward compatibility, no change in public API When is it useful Creating config options What are the alternatives Constructor overloading Config Object How is it implemented ? Use uptrace for demonstration I don&amp;rsquo;t like how I gloss over functional parameters When writing a Go library there are a number of ways of enabling configuration by the user. You can use positional arguments, config structs or functional options.</description>
+      <guid>http://localhost:1313/posts/technical/functional-options/</guid>
+      <description>The functional options pattern is a mechanism for providing flexible configuration to a Go library and in this article I will be exploring how it is implemented in uptrace-go. There are other less flexible techniques for achieving the same goal like config structs and positional arguments which I won&amp;rsquo;t cover but are good to know.&#xA;As you can tell from the title, functions are central to the implementation of this pattern and in uptrace-go it all starts with the option function type.</description>
     </item>
     <item>
       <title>Embedded Github Snippets</title>
-      <link>https://www.japhethobala.com/posts/technical/embedded-gh-snippets/</link>
+      <link>http://localhost:1313/posts/technical/embedded-gh-snippets/</link>
       <pubDate>Sat, 24 Jun 2023 00:00:00 +0000</pubDate>
-      <guid>https://www.japhethobala.com/posts/technical/embedded-gh-snippets/</guid>
+      <guid>http://localhost:1313/posts/technical/embedded-gh-snippets/</guid>
       <description>I wanted to make adding snippets to my articles effortless instead of copy pasting, maintaining different versions of the same thing or worse screenshoting snippets. Gists don&amp;rsquo;t cut it and their styling wouldn&amp;rsquo;t have felt native to my blog so I decided to rollout my own solution.&#xA;I wanted an experience similar to Github Embedded Snippets, where I could paste a permalink and the snippet gets rendered. For example putting &amp;lt;permalink&amp;gt; in an article should render the snippet below.</description>
     </item>
     <item>
       <title>Go Concurrency 101</title>
-      <link>https://www.japhethobala.com/posts/technical/go-concurrency-101/</link>
+      <link>http://localhost:1313/posts/technical/go-concurrency-101/</link>
       <pubDate>Sat, 11 Mar 2023 00:00:00 +0000</pubDate>
-      <guid>https://www.japhethobala.com/posts/technical/go-concurrency-101/</guid>
+      <guid>http://localhost:1313/posts/technical/go-concurrency-101/</guid>
       <description>Goroutines Goroutines enable concurrent behaviour in Go programs. To make a function concurrent &amp;ndash; non blocking &amp;ndash; simply place the go keyword before the function invocation.&#xA;func helloWorld() { fmt.Println(&amp;#34;Hello, World&amp;#34;) } // invoke the function concurrently go helloWorld() Channels Goroutines use channels to communicate. The type of data a channel can transfer is determined at channel creation time. The snippet below creates an integer channel telephoneLine and passes the channel to the neighbour goroutine.</description>
     </item>
     <item>
       <title>From Javascript To Typescript</title>
-      <link>https://www.japhethobala.com/posts/technical/js-to-ts/</link>
+      <link>http://localhost:1313/posts/technical/js-to-ts/</link>
       <pubDate>Sun, 30 Oct 2022 00:00:00 +0000</pubDate>
-      <guid>https://www.japhethobala.com/posts/technical/js-to-ts/</guid>
+      <guid>http://localhost:1313/posts/technical/js-to-ts/</guid>
       <description>The advantages of Typescript over Javascript are obvious and little convincing is required to persuade a team to migrate from Javascript to Typescript. For historical reasons netlify/build was in Javascript and we decided to migrate it to Typescript in an effort to improve developer experience.&#xA;netlify/build is an opensource monorepo and receives frequent contributions. This constrained us from performing a big bang migration which has the risk of large merge conflicts.</description>
     </item>
     <item>
       <title>Commando Cli Framework</title>
-      <link>https://www.japhethobala.com/posts/technical/commando/</link>
+      <link>http://localhost:1313/posts/technical/commando/</link>
       <pubDate>Sat, 03 Sep 2022 00:00:00 +0000</pubDate>
-      <guid>https://www.japhethobala.com/posts/technical/commando/</guid>
+      <guid>http://localhost:1313/posts/technical/commando/</guid>
       <description>I spent the better part of 2021 working msgraph-cli and I learnt a lot despite a change in strategy that meant me working on something else. Commando is a crystallisation of the lessons I learnt.&#xA;Declarative Command Grouping Commando&amp;rsquo;s approach to command grouping is heavily influenced by the fact that CLIs like SDKs are wrappers for HTTP APIs. Therefore, I wanted a one-to-one mapping between an api url and command group definition.</description>
     </item>
     <item>
       <title>Open Closed Principle</title>
-      <link>https://www.japhethobala.com/posts/technical/open-closed/</link>
+      <link>http://localhost:1313/posts/technical/open-closed/</link>
       <pubDate>Sun, 07 Feb 2021 00:00:00 +0000</pubDate>
-      <guid>https://www.japhethobala.com/posts/technical/open-closed/</guid>
+      <guid>http://localhost:1313/posts/technical/open-closed/</guid>
       <description>A system is rigid when a change in requirements leads to a cascade of changes in the software. The open closed principle is the antidote for rigid software designs, when implemented properly it makes the software system flexible. It is the principle you should know.&#xA;The principle states that software entities &amp;ndash; modules, classes, functions &amp;ndash; should be open for extension but closed for modifications.&#xA;For a module that conforms to this principle it should be possible to add new features without modifying the module&amp;rsquo;s source code or binaries.</description>
     </item>
     <item>
       <title>Single Responsibility Principle</title>
-      <link>https://www.japhethobala.com/posts/technical/single-responsibility/</link>
+      <link>http://localhost:1313/posts/technical/single-responsibility/</link>
       <pubDate>Sat, 23 Jan 2021 00:00:00 +0000</pubDate>
-      <guid>https://www.japhethobala.com/posts/technical/single-responsibility/</guid>
+      <guid>http://localhost:1313/posts/technical/single-responsibility/</guid>
       <description>Most people think that the single responsibility principle means that a module should do one thing. This is a common misunderstanding of the principle and leads to a fragmented codebase with thin classes, with one or two methods, littering the codebase as we can see in this StackOverflow question.&#xA;While researching about the subject, I came across SRP is a hoax which in my opinion embodies the misunderstanding of the single responsibility principle.</description>
     </item>
     <item>
       <title></title>
-      <link>https://www.japhethobala.com/about/</link>
+      <link>http://localhost:1313/about/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://www.japhethobala.com/about/</guid>
+      <guid>http://localhost:1313/about/</guid>
       <description>Hey, I am Japheth. Welcome to my little corner of the wild wide web.&#xA;This site serves the following purposes:&#xA;Share what I have learnt. Reflect because no learning happens without reflection. Creative outlet. I am interested in:&#xA;Developer Tools SDKs Build systems Other than that, I am a recovering self taught developer.</description>
     </item>
   </channel>

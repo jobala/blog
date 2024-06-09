@@ -1,0 +1,111 @@
+<html lang="en">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <link rel="stylesheet" href="/css/reset.css" />
+  <link rel="stylesheet" href="/css/font.css" />
+  <link rel="stylesheet" href="/css/butterick.css" />
+  <script defer language="javascript" type="text/javascript" src="/js/gh.js"></script>
+  <script src="https://unpkg.com/github-calendar@latest/dist/github-calendar.min.js"></script>
+  <link rel="stylesheet" href="https://unpkg.com/github-calendar@latest/dist/github-calendar-responsive.css" />
+  <link rel="stylesheet"
+      href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/default.min.css">  
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
+</head>
+
+  <body>
+    <header>
+  <nav>
+    <div class="home">
+      <a href="http://localhost:1313/">
+        <h3>Home</h3>
+      </a>
+    </div>
+    
+    
+      
+        
+        <div class="vl"></div>
+        <div class="menu-item">
+          <a  href="/about/"><h3>About</h3></a>
+        </div>
+      
+    
+  </nav>
+</header>
+
+    <div id="content">
+      
+  <h1>Profiling In Go</h1>
+  <p>It is possible to write slow programs despite increasingly powerful computers and profiling helps you identify slow sections of your program.</p>
+<p>Assuming we have two functions that calculate the square of their index and adds the result to a slice, how do we know which is faster ?</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#000;font-weight:bold">func</span> <span style="color:#900;font-weight:bold">CalculateSquares</span>(n <span style="color:#458;font-weight:bold">int</span>) []<span style="color:#458;font-weight:bold">int</span> {
+</span></span><span style="display:flex;"><span>	squares <span style="color:#000;font-weight:bold">:=</span> <span style="color:#0086b3">make</span>([]<span style="color:#458;font-weight:bold">int</span>, n)
+</span></span><span style="display:flex;"><span>	<span style="color:#000;font-weight:bold">for</span> i <span style="color:#000;font-weight:bold">:=</span> <span style="color:#099">1</span>; i <span style="color:#000;font-weight:bold">&lt;=</span> n; i<span style="color:#000;font-weight:bold">++</span> {
+</span></span><span style="display:flex;"><span>		squares[i<span style="color:#000;font-weight:bold">-</span><span style="color:#099">1</span>] = i <span style="color:#000;font-weight:bold">*</span> i
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>	<span style="color:#000;font-weight:bold">return</span> squares
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#000;font-weight:bold">func</span> <span style="color:#900;font-weight:bold">CalculateSquaresMath</span>(n <span style="color:#458;font-weight:bold">int</span>) []<span style="color:#458;font-weight:bold">int</span> {
+</span></span><span style="display:flex;"><span>	squares <span style="color:#000;font-weight:bold">:=</span> <span style="color:#0086b3">make</span>([]<span style="color:#458;font-weight:bold">int</span>, n)
+</span></span><span style="display:flex;"><span>	<span style="color:#000;font-weight:bold">for</span> i <span style="color:#000;font-weight:bold">:=</span> <span style="color:#099">1</span>; i <span style="color:#000;font-weight:bold">&lt;=</span> n; i<span style="color:#000;font-weight:bold">++</span> {
+</span></span><span style="display:flex;"><span>		squares[i<span style="color:#000;font-weight:bold">-</span><span style="color:#099">1</span>] = <span style="color:#0086b3">int</span>(math.<span style="color:#900;font-weight:bold">Pow</span>(<span style="color:#0086b3">float64</span>(i), <span style="color:#099">2</span>))
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>	<span style="color:#000;font-weight:bold">return</span> squares
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>We can use benchmarking to know which of the two is faster.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#000;font-weight:bold">func</span> <span style="color:#900;font-weight:bold">BenchmarkCalculateSquaresMain</span>(b <span style="color:#000;font-weight:bold">*</span>testing.B) {
+</span></span><span style="display:flex;"><span>	<span style="color:#000;font-weight:bold">for</span> i <span style="color:#000;font-weight:bold">:=</span> <span style="color:#099">0</span>; i &lt; b.N; i<span style="color:#000;font-weight:bold">++</span> {
+</span></span><span style="display:flex;"><span>		<span style="color:#900;font-weight:bold">CalculateSquares</span>(<span style="color:#099">10</span>)
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>goos: darwin
+</span></span><span style="display:flex;"><span>goarch: arm64
+</span></span><span style="display:flex;"><span>pkg: demo1
+</span></span><span style="display:flex;"><span>BenchmarkCalculateSquaresMain<span style="color:#000;font-weight:bold">-</span><span style="color:#099">10</span>    	<span style="color:#099">55957647</span>	        <span style="color:#099">21.29</span> ns<span style="color:#000;font-weight:bold">/</span>op	      <span style="color:#099">80</span> B<span style="color:#000;font-weight:bold">/</span>op	       <span style="color:#099">1</span> allocs<span style="color:#000;font-weight:bold">/</span>op
+</span></span><span style="display:flex;"><span>PASS
+</span></span><span style="display:flex;"><span>ok  	demo1	<span style="color:#099">2.183</span>s
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#000;font-weight:bold">func</span> <span style="color:#900;font-weight:bold">BenchmarkCalculateSquaresMath</span>(b <span style="color:#000;font-weight:bold">*</span>testing.B) {
+</span></span><span style="display:flex;"><span>	<span style="color:#000;font-weight:bold">for</span> i <span style="color:#000;font-weight:bold">:=</span> <span style="color:#099">0</span>; i &lt; b.N; i<span style="color:#000;font-weight:bold">++</span> {
+</span></span><span style="display:flex;"><span>		<span style="color:#900;font-weight:bold">CalculateSquaresMath</span>(<span style="color:#099">10</span>)
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>goos: darwin
+</span></span><span style="display:flex;"><span>goarch: arm64
+</span></span><span style="display:flex;"><span>pkg: demo1
+</span></span><span style="display:flex;"><span>BenchmarkCalculateSquaresMath<span style="color:#000;font-weight:bold">-</span><span style="color:#099">10</span>    	<span style="color:#099">11432787</span>	       <span style="color:#099">105.4</span> ns<span style="color:#000;font-weight:bold">/</span>op	      <span style="color:#099">80</span> B<span style="color:#000;font-weight:bold">/</span>op	       <span style="color:#099">1</span> allocs<span style="color:#000;font-weight:bold">/</span>op
+</span></span><span style="display:flex;"><span>PASS
+</span></span><span style="display:flex;"><span>ok  	demo1	<span style="color:#099">2.691</span>s
+</span></span></code></pre></div><p>From the benchmarking results we can see that <code>CalculateSquaresMath</code> is slower than <code>CalculateSquaresMain</code> but we don&rsquo;t know why. We&rsquo;ll have to use <a href="https://github.com/google/pprof">pprof</a> to get better insight.</p>
+<p>First we need to create cpu and memory profiles using the command below</p>
+<pre tabindex="0"><code>go test -run=&#39;^$&#39; -bench=&#39;BenchmarkCalculateSquaresMath&#39; -cpuprofile=&#39;cpu.prof&#39; -memprofile=&#39;mem.prof&#39;
+</code></pre><p>The use <code>pprof</code>&rsquo;s top method to get a high level view of where the function is spending most of its time.</p>
+<pre tabindex="0"><code>go tool pprof cpu.prof
+
+(pprof) top
+Showing nodes accounting for 1110ms, 81.02% of 1370ms total
+Showing top 10 nodes out of 100
+      flat  flat%   sum%        cum   cum%
+     270ms 19.71% 19.71%      270ms 19.71%  math.archModf
+     170ms 12.41% 32.12%      740ms 54.01%  math.pow
+     170ms 12.41% 44.53%      170ms 12.41%  runtime.kevent
+     160ms 11.68% 56.20%      180ms 13.14%  math.Frexp (inline)
+     100ms  7.30% 63.50%      100ms  7.30%  runtime.pthread_cond_wait
+      80ms  5.84% 69.34%       80ms  5.84%  math.IsNaN (inline)
+      50ms  3.65% 72.99%      130ms  9.49%  runtime.mallocgc
+      40ms  2.92% 75.91%       40ms  2.92%  runtime.pthread_cond_timedwait_relative_np
+      40ms  2.92% 78.83%       40ms  2.92%  runtime.usleep
+      30ms  2.19% 81.02%      900ms 65.69%  demo1.CalculateSquaresMath
+</code></pre><p>From the results we see that most of the time is spent in the <code>math.pow</code> function. Armed with this knowledge we can go ahead and optimise this part.</p>
+
+
+    </div>
+    
+  </body>
+  <script>
+    
+    GitHubCalendar(".calendar", "jobala", { responsive: true });
+  </script>
+</html>

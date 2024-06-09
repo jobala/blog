@@ -2,59 +2,66 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Categories on Japheth Obala</title>
-    <link>https://www.japhethobala.com/categories/</link>
+    <link>http://localhost:1313/categories/</link>
     <description>Recent content in Categories on Japheth Obala</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 28 Dec 2023 10:12:42 +0300</lastBuildDate>
-    <atom:link href="https://www.japhethobala.com/categories/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 09 Jun 2024 19:04:09 +0300</lastBuildDate>
+    <atom:link href="http://localhost:1313/categories/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>exploratory</title>
-      <link>https://www.japhethobala.com/categories/exploratory/</link>
-      <pubDate>Thu, 28 Dec 2023 10:12:42 +0300</pubDate>
-      <guid>https://www.japhethobala.com/categories/exploratory/</guid>
+      <title>Philosophy</title>
+      <link>http://localhost:1313/categories/philosophy/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/categories/philosophy/</guid>
       <description></description>
     </item>
     <item>
-      <title>go</title>
-      <link>https://www.japhethobala.com/categories/go/</link>
-      <pubDate>Thu, 28 Dec 2023 10:12:42 +0300</pubDate>
-      <guid>https://www.japhethobala.com/categories/go/</guid>
+      <title>Go</title>
+      <link>http://localhost:1313/categories/go/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/categories/go/</guid>
       <description></description>
     </item>
     <item>
-      <title>projects</title>
-      <link>https://www.japhethobala.com/categories/projects/</link>
-      <pubDate>Sat, 24 Jun 2023 00:00:00 +0000</pubDate>
-      <guid>https://www.japhethobala.com/categories/projects/</guid>
+      <title>Technical</title>
+      <link>http://localhost:1313/categories/technical/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/categories/technical/</guid>
       <description></description>
     </item>
     <item>
-      <title>developer-experience</title>
-      <link>https://www.japhethobala.com/categories/developer-experience/</link>
-      <pubDate>Sun, 30 Oct 2022 00:00:00 +0000</pubDate>
-      <guid>https://www.japhethobala.com/categories/developer-experience/</guid>
+      <title>Projects</title>
+      <link>http://localhost:1313/categories/projects/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/categories/projects/</guid>
       <description></description>
     </item>
     <item>
-      <title>engineering</title>
-      <link>https://www.japhethobala.com/categories/engineering/</link>
-      <pubDate>Sun, 30 Oct 2022 00:00:00 +0000</pubDate>
-      <guid>https://www.japhethobala.com/categories/engineering/</guid>
+      <title>Developer-Experience</title>
+      <link>http://localhost:1313/categories/developer-experience/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/categories/developer-experience/</guid>
       <description></description>
     </item>
     <item>
-      <title>cli</title>
-      <link>https://www.japhethobala.com/categories/cli/</link>
-      <pubDate>Sat, 03 Sep 2022 00:00:00 +0000</pubDate>
-      <guid>https://www.japhethobala.com/categories/cli/</guid>
+      <title>Engineering</title>
+      <link>http://localhost:1313/categories/engineering/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/categories/engineering/</guid>
       <description></description>
     </item>
     <item>
-      <title>solid principles</title>
-      <link>https://www.japhethobala.com/categories/solid-principles/</link>
-      <pubDate>Sun, 07 Feb 2021 00:00:00 +0000</pubDate>
-      <guid>https://www.japhethobala.com/categories/solid-principles/</guid>
+      <title>Cli</title>
+      <link>http://localhost:1313/categories/cli/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/categories/cli/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Solid Principles</title>
+      <link>http://localhost:1313/categories/solid-principles/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/categories/solid-principles/</guid>
       <description></description>
     </item>
   </channel>

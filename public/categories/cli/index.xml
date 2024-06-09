@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>cli on Japheth Obala</title>
-    <link>https://www.japhethobala.com/categories/cli/</link>
-    <description>Recent content in cli on Japheth Obala</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <title>Cli on Japheth Obala</title>
+    <link>http://localhost:1313/categories/cli/</link>
+    <description>Recent content in Cli on Japheth Obala</description>
+    <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate>Sat, 03 Sep 2022 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://www.japhethobala.com/categories/cli/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/categories/cli/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Commando Cli Framework</title>
-      <link>https://www.japhethobala.com/posts/technical/commando/</link>
+      <link>http://localhost:1313/posts/technical/commando/</link>
       <pubDate>Sat, 03 Sep 2022 00:00:00 +0000</pubDate>
-      <guid>https://www.japhethobala.com/posts/technical/commando/</guid>
+      <guid>http://localhost:1313/posts/technical/commando/</guid>
       <description>I spent the better part of 2021 working msgraph-cli and I learnt a lot despite a change in strategy that meant me working on something else. Commando is a crystallisation of the lessons I learnt.&#xA;Declarative Command Grouping Commando&amp;rsquo;s approach to command grouping is heavily influenced by the fact that CLIs like SDKs are wrappers for HTTP APIs. Therefore, I wanted a one-to-one mapping between an api url and command group definition.</description>
     </item>
   </channel>
