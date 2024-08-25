@@ -6,13 +6,27 @@
     <description>Recent content in Posts on Japheth Obala</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 09 Jun 2024 19:04:09 +0300</lastBuildDate>
+    <lastBuildDate>Sun, 25 Aug 2024 10:30:36 +0300</lastBuildDate>
     <atom:link href="http://localhost:1313/posts/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>Nand2tetris</title>
+      <link>http://localhost:1313/posts/technical/nand2tetris/</link>
+      <pubDate>Sun, 25 Aug 2024 10:30:36 +0300</pubDate>
+      <guid>http://localhost:1313/posts/technical/nand2tetris/</guid>
+      <description>Around three months ago I embarked on a journey through the nand2Tetris book to build a computer from scratch. This will be the third time I am attempting the journey after having lost interest midway twice. I decided to &amp;ldquo;physically&amp;rdquo; build the circuits so as to keep myself motivated. Seeing your creation coming to life has funny away of keeping you going. My goal was to understand the spirit of the device that I spend so much of my time on.</description>
+    </item>
+    <item>
+      <title>Ideal Editor</title>
+      <link>http://localhost:1313/posts/reflections/ideal-editor/</link>
+      <pubDate>Sun, 25 Aug 2024 09:40:12 +0300</pubDate>
+      <guid>http://localhost:1313/posts/reflections/ideal-editor/</guid>
+      <description>I spend a lot of time editing text and I have used different text editors over the years. I started off on Sublime Text then I was introduced to Vim by a friend and it didn&amp;rsquo;t quite stick then and it didn&amp;rsquo;t help that I didn&amp;rsquo;t know how to touch type. I spent time in the Jetbrain gulag even buying multiple licenses for different IDEs, then came VS Code and back to Vim.</description>
+    </item>
+    <item>
       <title>Intellectual Life</title>
-      <link>http://localhost:1313/posts/philosophy/intellectual-life/</link>
+      <link>http://localhost:1313/posts/reflections/intellectual-life/</link>
       <pubDate>Sun, 09 Jun 2024 19:04:09 +0300</pubDate>
-      <guid>http://localhost:1313/posts/philosophy/intellectual-life/</guid>
+      <guid>http://localhost:1313/posts/reflections/intellectual-life/</guid>
       <description>The word &amp;ldquo;vocation&amp;rdquo; is derived from the Latin word &amp;ldquo;vocare,&amp;rdquo; meaning &amp;ldquo;to call.&amp;rdquo; Among the various paths individuals are summoned to follow, the calling to an intellectual life stands out as a pursuit of knowledge and understanding through continuous and methodical effort. This article explores the significance and challenges of dedicating oneself to an intellectual life, emphasizing the disciplined study and sharing of knowledge.&#xA;Few endeavors are as fulfilling as contributing to humanity&amp;rsquo;s progress through intellectual inquiry.</description>
     </item>
     <item>
