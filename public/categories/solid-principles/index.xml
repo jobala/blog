@@ -13,14 +13,14 @@
       <link>http://localhost:1313/posts/technical/open-closed/</link>
       <pubDate>Sun, 07 Feb 2021 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/posts/technical/open-closed/</guid>
-      <description>A system is rigid when a change in requirements leads to a cascade of changes in the software. The open closed principle is the antidote for rigid software designs, when implemented properly it makes the software system flexible. It is the principle you should know.&#xA;The principle states that software entities &amp;ndash; modules, classes, functions &amp;ndash; should be open for extension but closed for modifications.&#xA;For a module that conforms to this principle it should be possible to add new features without modifying the module&amp;rsquo;s source code or binaries.</description>
+      <description>&lt;p&gt;A system is rigid when a change in requirements leads to a cascade of changes in the software. The open closed principle is the antidote for rigid software designs, when implemented properly it makes the software system flexible. It is the principle you should know.&lt;/p&gt;&#xA;&lt;p&gt;The principle states that software entities &amp;ndash; modules, classes, functions &amp;ndash; should be open for extension but closed for modifications.&lt;/p&gt;&#xA;&lt;p&gt;For a module that conforms to this principle it should be possible to add new features without modifying the module&amp;rsquo;s source code or binaries. New features are added by adding new code and not by modifying existing working code. I know this is beginning to sound like a riddle, how can you add new features without modifying existing code?&lt;/p&gt;</description>
     </item>
     <item>
       <title>Single Responsibility Principle</title>
       <link>http://localhost:1313/posts/technical/single-responsibility/</link>
       <pubDate>Sat, 23 Jan 2021 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/posts/technical/single-responsibility/</guid>
-      <description>Most people think that the single responsibility principle means that a module should do one thing. This is a common misunderstanding of the principle and leads to a fragmented codebase with thin classes, with one or two methods, littering the codebase as we can see in this StackOverflow question.&#xA;While researching about the subject, I came across SRP is a hoax which in my opinion embodies the misunderstanding of the single responsibility principle.</description>
+      <description>&lt;p&gt;Most people think that the single responsibility principle means that a module should do one thing. This is a common misunderstanding of the principle and leads to a fragmented codebase with thin classes, with one or two methods, littering the codebase as we can see in this &lt;a href=&#34;https://softwareengineering.stackexchange.com/questions/150760/single-responsibility-principle-how-can-i-avoid-code-fragmentation&#34;&gt;StackOverflow question&lt;/a&gt;.&lt;/p&gt;&#xA;&lt;p&gt;While researching about the subject, I came across &lt;a href=&#34;https://www.yegor256.com/2017/12/19/srp-is-hoax.html&#34;&gt;SRP is a hoax&lt;/a&gt; which in my opinion embodies the misunderstanding of the single responsibility principle. The article shows the code below&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

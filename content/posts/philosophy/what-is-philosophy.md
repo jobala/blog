@@ -7,7 +7,7 @@ categories:
 
 My exposure to philosophy was much like the beginning of a good discovery, accidental, and I have become enamoured by it.
 My enthusiasm for philosophy far outweighs my acquitance with it and I might write things that you disagree with but that
-is fine. I am writing for myself, to look back and see how far I have come in my understanding and practise of philosophy.
+is fine. i am writing for myself, to look back and see how far I have come in my understanding and practise of philosophy.
 
 There isn't a better well to quench the thirst of philosophy than that of Socrates and that's where I went to start. Very
 quickly it became clear to me that philosophy and faith are joined at the hip and Socrates appeared to me to be more than a

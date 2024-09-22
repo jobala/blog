@@ -13,7 +13,7 @@
       <link>http://localhost:1313/posts/technical/js-to-ts/</link>
       <pubDate>Sun, 30 Oct 2022 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/posts/technical/js-to-ts/</guid>
-      <description>The advantages of Typescript over Javascript are obvious and little convincing is required to persuade a team to migrate from Javascript to Typescript. For historical reasons netlify/build was in Javascript and we decided to migrate it to Typescript in an effort to improve developer experience.&#xA;netlify/build is an opensource monorepo and receives frequent contributions. This constrained us from performing a big bang migration which has the risk of large merge conflicts.</description>
+      <description>&lt;p&gt;The advantages of Typescript over Javascript are obvious and little convincing is required to persuade a team to migrate&#xA;from Javascript to Typescript. For historical reasons &lt;a href=&#34;github.com/netlify/build&#34;&gt;netlify/build&lt;/a&gt; was in Javascript and we&#xA;decided to migrate it to Typescript in an effort to improve developer experience.&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;github.com/netlify/build&#34;&gt;netlify/build&lt;/a&gt; is an opensource monorepo and receives frequent contributions. This&#xA;constrained us from performing a big bang migration which has the risk of large merge conflicts. The migration had to be&#xA;transparent, making it possible for devs to add changes without noticing that the underlying tooling was changing.&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>
