@@ -6,8 +6,15 @@
     <description>Recent content on Japheth Obala</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 09 Sep 2024 12:19:30 +0300</lastBuildDate>
+    <lastBuildDate>Wed, 18 Sep 2024 12:24:39 +0300</lastBuildDate>
     <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>My Coding Process</title>
+      <link>http://localhost:1313/posts/reflections/my-coding-process/</link>
+      <pubDate>Wed, 18 Sep 2024 12:24:39 +0300</pubDate>
+      <guid>http://localhost:1313/posts/reflections/my-coding-process/</guid>
+      <description>&lt;p&gt;Performing consistently at a high level is what separates the wheat from chaff in any industry and motivation is an unreliable servant, ebbing and flowing over time. However, having systems in place and the discipline to follow through helps you do your best all the time. I have had many battle scars and this article is a crystallization of my process and I would love to learn about yours.&lt;/p&gt;&#xA;&lt;h2 id=&#34;before-development&#34;&gt;Before Development&lt;/h2&gt;&#xA;&lt;p&gt;I have put the cart before the horse numerous times, jumping to writing code without a good grasp of the problem I am solving often to my own detriment. A problem well understood is a problem half solved, therefore, I have learnt to take my time and seek clarity from stakeholders and documentation.&lt;/p&gt;</description>
+    </item>
     <item>
       <title>ORMs Considered Harmful</title>
       <link>http://localhost:1313/posts/technical/harmful-orms/</link>
