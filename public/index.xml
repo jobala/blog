@@ -6,8 +6,15 @@
     <description>Recent content on Japheth Obala</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 01 Sep 2024 12:11:09 +0300</lastBuildDate>
+    <lastBuildDate>Mon, 09 Sep 2024 12:19:30 +0300</lastBuildDate>
     <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>ORMs Considered Harmful</title>
+      <link>http://localhost:1313/posts/technical/harmful-orms/</link>
+      <pubDate>Mon, 09 Sep 2024 12:19:30 +0300</pubDate>
+      <guid>http://localhost:1313/posts/technical/harmful-orms/</guid>
+      <description>&lt;p&gt;Alright, the title is a click bait and ORMs are not harmful. With that out of the way,  I am going to make a case against ORMs and perhaps persuade you to write your own SQL instead. I have worked in teams where the use of ORMs was a default, unquestioned choice and  I don&amp;rsquo;t think they served us well in the long run.&lt;/p&gt;&#xA;&lt;p&gt;To be fair, ORMs help you move fast in the early stages of development but as the product matures and activity on the system increases ORMs begin to show their ugly side because queries that worked fine before are now slow and need to be optimised. For example, here is an actual case I encountered. A seemingly simple ORM query resulted in a SQL statement that joined six tables, included unused columns and took several seconds to execute &amp;ndash; far too long for a real-time system.&lt;/p&gt;</description>
+    </item>
     <item>
       <title>Slow Is Smooth, Smooth Is Fast</title>
       <link>http://localhost:1313/posts/reflections/slow-smooth-fast/</link>
