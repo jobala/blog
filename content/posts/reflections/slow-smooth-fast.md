@@ -3,8 +3,6 @@ title: Slow Is Smooth, Smooth Is Fast
 date: 2024-09-01T12:11:09+03:00
 ---
 
-Hello world
-
 Move fast and break things was popularized by Facebook and many startups followed suit to their own detriment because when you break things you have to fix them. The piper always has to get paid and when you don't have Facebook's resources at your disposal, the cost of fixing broken things is an existential threat. Which is why at Quill Dev Tools we focus on building things right the first time even though the progress feels slow because we believe slow is smooth and smooth is fast.
 
 With that said, moving fast is indeed a virtue and the best teams I have been in shipped quickly and frequently. However, I have also seen teams unable to ship new features because they spend all their time responding to customer complaints and fixing bugs. "Fast" should be integrated over time and to be able to ship things faster in the future you need to spend more time in the present building the right way.

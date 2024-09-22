@@ -10,10 +10,10 @@
     <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Slow Is Smooth, Smooth Is Fast</title>
-      <link>http://localhost:1313/posts/reflections/smooth-slow-fast/</link>
+      <link>http://localhost:1313/posts/reflections/slow-smooth-fast/</link>
       <pubDate>Sun, 01 Sep 2024 12:11:09 +0300</pubDate>
-      <guid>http://localhost:1313/posts/reflections/smooth-slow-fast/</guid>
-      <description>&lt;p&gt;Hello world&lt;/p&gt;&#xA;&lt;p&gt;Move fast and break things was popularized by Facebook and many startups followed suit to their own detriment because when you break things you have to fix them. The piper always has to get paid and when you don&amp;rsquo;t have Facebook&amp;rsquo;s resources at your disposal, the cost of fixing broken things is an existential threat. Which is why at Quill Dev Tools we focus on building things right the first time even though the progress feels slow because we believe slow is smooth and smooth is fast.&lt;/p&gt;</description>
+      <guid>http://localhost:1313/posts/reflections/slow-smooth-fast/</guid>
+      <description>&lt;p&gt;Move fast and break things was popularized by Facebook and many startups followed suit to their own detriment because when you break things you have to fix them. The piper always has to get paid and when you don&amp;rsquo;t have Facebook&amp;rsquo;s resources at your disposal, the cost of fixing broken things is an existential threat. Which is why at Quill Dev Tools we focus on building things right the first time even though the progress feels slow because we believe slow is smooth and smooth is fast.&lt;/p&gt;</description>
     </item>
     <item>
       <title>A Computer From Scratch</title>
