@@ -77,6 +77,7 @@ function getLanguage(pathname) {
     ts: 'typescript',
     py: 'python',
     go: 'go',
+    c: 'c',
     yml: 'yaml',
     toml: 'toml',
     json: 'json',

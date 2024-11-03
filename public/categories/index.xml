@@ -6,8 +6,22 @@
     <description>Recent content in Categories on Japheth Obala</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 09 Jun 2024 19:04:09 +0300</lastBuildDate>
+    <lastBuildDate>Sun, 29 Sep 2024 11:50:12 +0300</lastBuildDate>
     <atom:link href="http://localhost:1313/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Os</title>
+      <link>http://localhost:1313/categories/os/</link>
+      <pubDate>Sun, 29 Sep 2024 11:50:12 +0300</pubDate>
+      <guid>http://localhost:1313/categories/os/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Systems</title>
+      <link>http://localhost:1313/categories/systems/</link>
+      <pubDate>Sun, 29 Sep 2024 11:50:12 +0300</pubDate>
+      <guid>http://localhost:1313/categories/systems/</guid>
+      <description></description>
+    </item>
     <item>
       <title>Philosophy</title>
       <link>http://localhost:1313/categories/philosophy/</link>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Systems on Japheth Obala</title>
+    <link>http://localhost:1313/categories/systems/</link>
+    <description>Recent content in Systems on Japheth Obala</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 29 Sep 2024 11:50:12 +0300</lastBuildDate>
+    <atom:link href="http://localhost:1313/categories/systems/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Memory Management</title>
+      <link>http://localhost:1313/posts/technical/memory-mgmt/</link>
+      <pubDate>Sun, 29 Sep 2024 11:50:12 +0300</pubDate>
+      <guid>http://localhost:1313/posts/technical/memory-mgmt/</guid>
+      <description>&lt;p&gt;When a user starts a program, the operating system allocates a chunk of memory for the program to use. The chunk of memory is page aligned, with each page usually having a size of 4096 bytes &amp;ndash; 4KB. So a program is allocated n pages of memory to use i.e. a program might get 1 page of memory to use and the program&amp;rsquo;s address space &amp;ndash; range of valid memory locations &amp;ndash; will be from the beginning to the end of the page.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>
