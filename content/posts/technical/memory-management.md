@@ -12,7 +12,7 @@ each page being 4096 bytes -- 4KB.
 
 ![memory](/images/memory.png "memory")
 
-The operating system keeps track of the pages of memory it has given out to programs to use by taking on the pages'
+The operating system keeps track of the pages of memory it has given out to programs to use by taking note of the pages'
 physical address.
 
 ![pa](/images/phys_addr.png "physical address")
