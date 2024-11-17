@@ -1,0 +1,69 @@
+<html lang="en">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <link rel="stylesheet" href="/css/reset.css" />
+  <link rel="stylesheet" href="/css/font.css" />
+  <link rel="stylesheet" href="/css/butterick.css" />
+  <script defer language="javascript" type="text/javascript" src="/js/gh.js"></script>
+  <script src="https://unpkg.com/github-calendar@latest/dist/github-calendar.min.js"></script>
+  <link rel="stylesheet" href="https://unpkg.com/github-calendar@latest/dist/github-calendar-responsive.css" />
+  <link rel="stylesheet"
+      href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/default.min.css">  
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
+</head>
+
+  <body>
+    <header>
+  <nav>
+    <div class="home">
+      <a href="http://localhost:1313/">
+        <h3>Home</h3>
+      </a>
+    </div>
+    
+    
+      
+        
+        <div class="vl"></div>
+        <div class="menu-item">
+          <a  href="/about/"><h3>About</h3></a>
+        </div>
+      
+    
+  </nav>
+</header>
+
+    <div id="content">
+      
+  <h1>Sleep And Wakeup</h1>
+  <p>Sleep and wakeup functions are used to implement voluntary scheduling, whereby, a process opts to yield the cpu without
+being forced to do so by a timer interrupt. Processes yield the CPU for I/O bound operations. A process doesn&rsquo;t need CPU
+time when it is waiting for response from an I/O device.</p>
+<h2 id="sleep">Sleep</h2>
+<p>The sleep function takes two arguments a channel and a lock. The channel will be used by the <code>wakeup</code> function to wake
+up sleeping processes. The lock is used to maintain some flag&rsquo;s invariant to avoid deadlocks.</p>
+
+
+<pre class="gh"> https://github.com/mit-pdos/xv6-riscv/blob/de247db5e6384b138f270e0a7c745989b5a9c23b/kernel/proc.c#L547-L574 </pre>
+
+
+<p><code>sleep</code> then acquire&rsquo;s the processes&rsquo; lock and releases the lock it received in the argument.</p>
+<h2 id="wakeup">Wakeup</h2>
+<p>Wakeup resumes all processes listening on a channel. It goes through the process table and finds processes listening on
+a specific channel then changes the state to <strong>runnable</strong>, then the scheduler will find and resume them.</p>
+
+
+<pre class="gh"> https://github.com/mit-pdos/xv6-riscv/blob/de247db5e6384b138f270e0a7c745989b5a9c23b/kernel/proc.c#L576-L592 </pre>
+
+
+
+
+    </div>
+    
+  </body>
+  <script>
+    
+    GitHubCalendar(".calendar", "jobala", { responsive: true });
+  </script>
+</html>

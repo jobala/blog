@@ -1,17 +1,16 @@
 ---
-title: Commando Cli Framework 
+title: Commando Cli Framework
 date: 2022-09-03
 categories:
   - cli
-slug: commando 
+slug: commando
 keywords:
   - cli
   - command-line
   - commando
 ---
 
-I spent the better part of 2021 working msgraph-cli and I learnt a lot despite  a change in strategy that meant me working on something else. [Commando](https://github.com/jobala/commando) is a crystallisation of the lessons I learnt. 
-
+I spent the better part of 2021 working msgraph-cli and I learnt a lot despite a change in strategy that meant me working on something else. [Commando](https://github.com/jobala/commando) is a crystallisation of the lessons I learnt.
 
 ## Declarative Command Grouping
 
@@ -35,7 +34,6 @@ cli.CommandGroup("parent first-child").
     WithCommand(commando.Command("grand-child"), handlerFunc)).
     WithCommand(commando.Command("second-grand-child", handlerFunc))
 ```
-
 
 And adding a second-child command group to parent is as simple as creating another command group.
 

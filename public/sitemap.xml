@@ -2,23 +2,14 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>http://localhost:1313/categories/</loc>
-    <lastmod>2024-09-29T11:50:12+03:00</lastmod>
-  </url><url>
     <loc>http://localhost:1313/</loc>
-    <lastmod>2024-09-29T11:50:12+03:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/posts/technical/memory-mgmt/</loc>
-    <lastmod>2024-09-29T11:50:12+03:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/categories/os/</loc>
-    <lastmod>2024-09-29T11:50:12+03:00</lastmod>
+    <lastmod>2024-11-11T14:51:32+03:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/posts/</loc>
-    <lastmod>2024-09-29T11:50:12+03:00</lastmod>
+    <lastmod>2024-11-11T14:51:32+03:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/categories/systems/</loc>
-    <lastmod>2024-09-29T11:50:12+03:00</lastmod>
+    <loc>http://localhost:1313/posts/technical/sleep-and-wakeup/</loc>
+    <lastmod>2024-11-04T10:54:49+03:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/posts/reflections/my-coding-process/</loc>
     <lastmod>2024-09-18T12:24:39+03:00</lastmod>
@@ -34,6 +25,9 @@
   </url><url>
     <loc>http://localhost:1313/posts/reflections/ideal-editor/</loc>
     <lastmod>2024-08-25T09:40:12+03:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/categories/</loc>
+    <lastmod>2024-06-09T19:04:09+03:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/posts/reflections/intellectual-life/</loc>
     <lastmod>2024-06-09T19:04:09+03:00</lastmod>

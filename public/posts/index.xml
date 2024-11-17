@@ -6,14 +6,14 @@
     <description>Recent content in Posts on Japheth Obala</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 29 Sep 2024 11:50:12 +0300</lastBuildDate>
+    <lastBuildDate>Mon, 04 Nov 2024 10:54:49 +0300</lastBuildDate>
     <atom:link href="http://localhost:1313/posts/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Memory Management</title>
-      <link>http://localhost:1313/posts/technical/memory-mgmt/</link>
-      <pubDate>Sun, 29 Sep 2024 11:50:12 +0300</pubDate>
-      <guid>http://localhost:1313/posts/technical/memory-mgmt/</guid>
-      <description>&lt;p&gt;When a user starts a program, the operating system allocates a chunk of memory for the program to use. The chunk of memory is page aligned, with each page usually having a size of 4096 bytes &amp;ndash; 4KB. So a program is allocated n pages of memory to use i.e. a program might get 1 page of memory to use and the program&amp;rsquo;s address space &amp;ndash; range of valid memory locations &amp;ndash; will be from the beginning to the end of the page.&lt;/p&gt;</description>
+      <title>Sleep And Wakeup</title>
+      <link>http://localhost:1313/posts/technical/sleep-and-wakeup/</link>
+      <pubDate>Mon, 04 Nov 2024 10:54:49 +0300</pubDate>
+      <guid>http://localhost:1313/posts/technical/sleep-and-wakeup/</guid>
+      <description>&lt;p&gt;Sleep and wakeup functions are used to implement voluntary scheduling, whereby, a process opts to yield the cpu without&#xA;being forced to do so by a timer interrupt. Processes yield the CPU for I/O bound operations. A process doesn&amp;rsquo;t need CPU&#xA;time when it is waiting for response from an I/O device.&lt;/p&gt;&#xA;&lt;h2 id=&#34;sleep&#34;&gt;Sleep&lt;/h2&gt;&#xA;&lt;p&gt;The sleep function takes two arguments a channel and a lock. The channel will be used by the &lt;code&gt;wakeup&lt;/code&gt; function to wake&#xA;up sleeping processes. The lock is used to maintain some flag&amp;rsquo;s invariant to avoid deadlocks.&lt;/p&gt;</description>
     </item>
     <item>
       <title>My Coding Process</title>
@@ -104,7 +104,7 @@
       <link>http://localhost:1313/posts/technical/commando/</link>
       <pubDate>Sat, 03 Sep 2022 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/posts/technical/commando/</guid>
-      <description>&lt;p&gt;I spent the better part of 2021 working msgraph-cli and I learnt a lot despite  a change in strategy that meant me working on something else. &lt;a href=&#34;https://github.com/jobala/commando&#34;&gt;Commando&lt;/a&gt; is a crystallisation of the lessons I learnt.&lt;/p&gt;&#xA;&lt;h2 id=&#34;declarative-command-grouping&#34;&gt;Declarative Command Grouping&lt;/h2&gt;&#xA;&lt;p&gt;Commando&amp;rsquo;s approach to command grouping is heavily influenced by the fact that CLIs like SDKs are wrappers for HTTP APIs. Therefore, I wanted a one-to-one mapping between an api url and command group definition. This led me to a declarative api for grouping commands. So, if a user wants to create the following command grouping in &lt;a href=&#34;https://github.com/jobala/commando&#34;&gt;Commando&lt;/a&gt;,&lt;/p&gt;</description>
+      <description>&lt;p&gt;I spent the better part of 2021 working msgraph-cli and I learnt a lot despite a change in strategy that meant me working on something else. &lt;a href=&#34;https://github.com/jobala/commando&#34;&gt;Commando&lt;/a&gt; is a crystallisation of the lessons I learnt.&lt;/p&gt;&#xA;&lt;h2 id=&#34;declarative-command-grouping&#34;&gt;Declarative Command Grouping&lt;/h2&gt;&#xA;&lt;p&gt;Commando&amp;rsquo;s approach to command grouping is heavily influenced by the fact that CLIs like SDKs are wrappers for HTTP APIs. Therefore, I wanted a one-to-one mapping between an api url and command group definition. This led me to a declarative api for grouping commands. So, if a user wants to create the following command grouping in &lt;a href=&#34;https://github.com/jobala/commando&#34;&gt;Commando&lt;/a&gt;,&lt;/p&gt;</description>
     </item>
     <item>
       <title>Open Closed Principle</title>

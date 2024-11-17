@@ -6,8 +6,15 @@
     <description>Recent content on Japheth Obala</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 18 Sep 2024 12:24:39 +0300</lastBuildDate>
+    <lastBuildDate>Sun, 29 Sep 2024 11:50:12 +0300</lastBuildDate>
     <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Memory Management</title>
+      <link>http://localhost:1313/posts/technical/memory-mgmt/</link>
+      <pubDate>Sun, 29 Sep 2024 11:50:12 +0300</pubDate>
+      <guid>http://localhost:1313/posts/technical/memory-mgmt/</guid>
+      <description>&lt;p&gt;Computer memory can be thought of as a book and when a program starts it is given pages in the &amp;ldquo;memory book&amp;rdquo; to use,&#xA;each page being 4096 bytes &amp;ndash; 4KB.&lt;/p&gt;&#xA;&lt;p&gt;&lt;p&gt;&#xA;  &lt;img&#xA;    loading=&#34;lazy&#34;&#xA;    src=&#34;http://localhost:1313/images/memory.png&#34;&#xA;    alt=&#34;memory&#34;&#xA;    &#xA;    title=&#34;memory&#34;&#xA;    &#xA;  /&gt;&#xA;&lt;/p&gt;&#xA;&lt;/p&gt;&#xA;&lt;p&gt;The operating system keeps track of the pages of memory it has given out to programs to use by taking on the pages&#39;&#xA;physical address.&lt;/p&gt;&#xA;&lt;p&gt;&lt;p&gt;&#xA;  &lt;img&#xA;    loading=&#34;lazy&#34;&#xA;    src=&#34;http://localhost:1313/images/phys_addr.png&#34;&#xA;    alt=&#34;pa&#34;&#xA;    &#xA;    title=&#34;physical address&#34;&#xA;    &#xA;  /&gt;&#xA;&lt;/p&gt;&#xA;&lt;/p&gt;&#xA;&lt;p&gt;The physical address is 64-bits wide, in the RISC-V architecture the top 8 bits are unused. The middle&#xA;44 bits are used to store the page&amp;rsquo;s base address and the remaining 12 bits are used to find the exact memory location&#xA;to write or read from in a page.&lt;/p&gt;</description>
+    </item>
     <item>
       <title>My Coding Process</title>
       <link>http://localhost:1313/posts/reflections/my-coding-process/</link>
@@ -97,7 +104,7 @@
       <link>http://localhost:1313/posts/technical/commando/</link>
       <pubDate>Sat, 03 Sep 2022 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/posts/technical/commando/</guid>
-      <description>&lt;p&gt;I spent the better part of 2021 working msgraph-cli and I learnt a lot despite  a change in strategy that meant me working on something else. &lt;a href=&#34;https://github.com/jobala/commando&#34;&gt;Commando&lt;/a&gt; is a crystallisation of the lessons I learnt.&lt;/p&gt;&#xA;&lt;h2 id=&#34;declarative-command-grouping&#34;&gt;Declarative Command Grouping&lt;/h2&gt;&#xA;&lt;p&gt;Commando&amp;rsquo;s approach to command grouping is heavily influenced by the fact that CLIs like SDKs are wrappers for HTTP APIs. Therefore, I wanted a one-to-one mapping between an api url and command group definition. This led me to a declarative api for grouping commands. So, if a user wants to create the following command grouping in &lt;a href=&#34;https://github.com/jobala/commando&#34;&gt;Commando&lt;/a&gt;,&lt;/p&gt;</description>
+      <description>&lt;p&gt;I spent the better part of 2021 working msgraph-cli and I learnt a lot despite a change in strategy that meant me working on something else. &lt;a href=&#34;https://github.com/jobala/commando&#34;&gt;Commando&lt;/a&gt; is a crystallisation of the lessons I learnt.&lt;/p&gt;&#xA;&lt;h2 id=&#34;declarative-command-grouping&#34;&gt;Declarative Command Grouping&lt;/h2&gt;&#xA;&lt;p&gt;Commando&amp;rsquo;s approach to command grouping is heavily influenced by the fact that CLIs like SDKs are wrappers for HTTP APIs. Therefore, I wanted a one-to-one mapping between an api url and command group definition. This led me to a declarative api for grouping commands. So, if a user wants to create the following command grouping in &lt;a href=&#34;https://github.com/jobala/commando&#34;&gt;Commando&lt;/a&gt;,&lt;/p&gt;</description>
     </item>
     <item>
       <title>Open Closed Principle</title>
