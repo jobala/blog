@@ -25,7 +25,8 @@ to write or read from in a page.
 
 When there are multiple programs running in memory, it is possible for one to corrupt the other -- and cause it to crash -- by overwriting its address space.
 The operating system avoids this by providing each program with a virtual address space instead of all programs using the physical address space.
-The OS then manages the virtual address to physical address using a page table. Virtual addresses are also 64-bit wide in 64-bit systems.
+The OS then manages the virtual to physical address translation using a page table, with each program having its own
+page table. While physical addresses index the RAM, virtual addresses index the program's page table. Virtual addresses are also 64-bit wide in 64-bit systems.
 
 ![page table](/images/page_tbl.png "page table")
 
