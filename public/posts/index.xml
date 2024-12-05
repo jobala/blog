@@ -6,14 +6,14 @@
     <description>Recent content in Posts on Japheth Obala</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 04 Nov 2024 10:54:49 +0300</lastBuildDate>
+    <lastBuildDate>Sun, 29 Sep 2024 11:50:12 +0300</lastBuildDate>
     <atom:link href="http://localhost:1313/posts/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Sleep And Wakeup</title>
-      <link>http://localhost:1313/posts/technical/sleep-and-wakeup/</link>
-      <pubDate>Mon, 04 Nov 2024 10:54:49 +0300</pubDate>
-      <guid>http://localhost:1313/posts/technical/sleep-and-wakeup/</guid>
-      <description>&lt;p&gt;Sleep and wakeup functions are used to implement voluntary scheduling, whereby, a process opts to yield the cpu without&#xA;being forced to do so by a timer interrupt. Processes yield the CPU for I/O bound operations. A process doesn&amp;rsquo;t need CPU&#xA;time when it is waiting for response from an I/O device.&lt;/p&gt;&#xA;&lt;h2 id=&#34;sleep&#34;&gt;Sleep&lt;/h2&gt;&#xA;&lt;p&gt;The sleep function takes two arguments a channel and a lock. The channel will be used by the &lt;code&gt;wakeup&lt;/code&gt; function to wake&#xA;up sleeping processes. The lock is used to maintain some flag&amp;rsquo;s invariant to avoid deadlocks.&lt;/p&gt;</description>
+      <title>Memory Management</title>
+      <link>http://localhost:1313/posts/technical/memory-mgmt/</link>
+      <pubDate>Sun, 29 Sep 2024 11:50:12 +0300</pubDate>
+      <guid>http://localhost:1313/posts/technical/memory-mgmt/</guid>
+      <description>&lt;p&gt;Computer memory can be thought of as a book and when a program starts it is given pages in the &amp;ldquo;memory book&amp;rdquo; to use,&#xA;each page being 4096 bytes &amp;ndash; 4KB.&lt;/p&gt;&#xA;&lt;p&gt;&lt;p&gt;&#xA;  &lt;img&#xA;    loading=&#34;lazy&#34;&#xA;    src=&#34;http://localhost:1313/images/memory.png&#34;&#xA;    alt=&#34;memory&#34;&#xA;    &#xA;    title=&#34;memory&#34;&#xA;    &#xA;  /&gt;&#xA;&lt;/p&gt;&#xA;&lt;/p&gt;&#xA;&lt;p&gt;The operating system keeps track of the pages of memory it has given out to programs to use by taking note of the pages&#39;&#xA;physical address.&lt;/p&gt;&#xA;&lt;p&gt;&lt;p&gt;&#xA;  &lt;img&#xA;    loading=&#34;lazy&#34;&#xA;    src=&#34;http://localhost:1313/images/phys_addr.png&#34;&#xA;    alt=&#34;pa&#34;&#xA;    &#xA;    title=&#34;physical address&#34;&#xA;    &#xA;  /&gt;&#xA;&lt;/p&gt;&#xA;&lt;/p&gt;&#xA;&lt;p&gt;The physical address is 64-bits wide, in the RISC-V architecture the top 8 bits are unused. The middle&#xA;44 bits are used to store the page&amp;rsquo;s base address and the remaining 12 bits are used to find the exact memory location&#xA;to write or read from in a page.&lt;/p&gt;</description>
     </item>
     <item>
       <title>My Coding Process</title>
