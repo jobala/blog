@@ -1,7 +1,7 @@
 ---
 title: "Beauty Is Good For You"
 date: 2025-01-19T14:19:21+03:00
-slug: beauty-human-condition
+slug: beauty-is-good
 tags:
   - aesthetics
 ---
