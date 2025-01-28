@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Os on Japheth Obala</title>
+    <link>http://localhost:1313/tags/os/</link>
+    <description>Recent content in Os on Japheth Obala</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 28 Jan 2025 15:31:49 +0300</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/os/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Boot Process</title>
+      <link>http://localhost:1313/posts/technical/boot-process/</link>
+      <pubDate>Tue, 28 Jan 2025 15:31:49 +0300</pubDate>
+      <guid>http://localhost:1313/posts/technical/boot-process/</guid>
+      <description>&lt;p&gt;Intention&#xA;I want to inform the reader on a computer&amp;rsquo;s boot process&lt;/p&gt;&#xA;&lt;p&gt;Narrative&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;How do we instruct qemu to load the kernel at 0x80000000?&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;linker.ld&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;entry.s&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;start.c&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;main.c&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;initializes the different services&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;Do you remember the last time you turned on your computer, ever wondered&#xA;what happens behind the scenes? Well, if you have this article will make it clear and if you&#xA;haven&amp;rsquo;t this article will give you something to think about.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

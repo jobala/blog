@@ -1,0 +1,78 @@
+<html lang="en">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <link rel="stylesheet" href="/css/reset.css" />
+  <link rel="stylesheet" href="/css/font.css" />
+  <link rel="stylesheet" href="/css/butterick.css" />
+  <script defer language="javascript" type="text/javascript" src="/js/gh.js"></script>
+  <script src="https://unpkg.com/github-calendar@latest/dist/github-calendar.min.js"></script>
+  <link rel="stylesheet" href="https://unpkg.com/github-calendar@latest/dist/github-calendar-responsive.css" />
+  <link rel="stylesheet"
+      href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/default.min.css">  
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
+</head>
+
+  <body>
+    <header>
+  <nav>
+    <div class="home">
+      <a href="http://localhost:1313/">
+        <h3>Home</h3>
+      </a>
+    </div>
+    
+    
+      
+        
+        <div class="vl"></div>
+        <div class="menu-item">
+          <a  href="/about/"><h3>About</h3></a>
+        </div>
+      
+    
+  </nav>
+</header>
+
+    <div id="content">
+      
+  <h1>What Happens When You Turn On A Computer ?</h1>
+  <p>I have always loved tearing things apart to see how they work and whenever I turn on my computer, I can&rsquo;t help but
+wonder what is it doing? This article is an answer to that question. We&rsquo;ll be exploring what happens when a computer
+boots up using the <a href="https://github.com/mit-pdos/xv6-riscv">xv6-riscv</a> os.</p>
+<p>Computer hardware is by itself useless without software and for a computer to run any software it must first load the
+software into it&rsquo;s memory. The operating system is the first software that the computer runs after it has turned on.
+Computers running RISC-V processors expects the operating system kernel to be loaded at the memory address
+<code>0x80000000</code>. xv6 uses a linker script to load the kernel at that address as shown below.</p>
+
+
+<pre class="gh"> https://github.com/mit-pdos/xv6-riscv/blob/de247db5e6384b138f270e0a7c745989b5a9c23b/kernel/kernel.ld#L6-L10 </pre>
+
+
+<p><code>entry.S</code> initializes the stack pointer register <code>sp</code> for each core. The address for some stack0 is defined in <code>start.c</code>
+and for the different cores their stack will be at the address <code>core_id * 4096</code>. In this instance <code>mhartid</code> represents
+the core&rsquo;s id. When it&rsquo;s done setting up the execution environment it jumps to the <code>start</code> function defined in
+<code>start.c</code>. The cores need a stack so that they can ran c programs. <code>start.c</code> does some setup and the calls <code>main.c</code>.</p>
+
+
+<pre class="gh"> https://github.com/mit-pdos/xv6-riscv/blob/de247db5e6384b138f270e0a7c745989b5a9c23b/kernel/entry.S#L7-L18 </pre>
+
+
+<p><code>main.c</code> starts the different components of the <code>xv6</code> os. The booting core &ndash; with id 0 &ndash; does the initialization and
+the other cores only initialize their paging, interrrupt vector and device interrupts. After which, the scheduler is
+started. At this point the os is done booting and you can use the computer.</p>
+
+
+<pre class="gh"> https://github.com/mit-pdos/xv6-riscv/blob/de247db5e6384b138f270e0a7c745989b5a9c23b/kernel/main.c#L13-L44 </pre>
+
+
+
+
+    </div>
+    
+  </body>
+  <script>
+    
+    GitHubCalendar(".calendar", "jobala", { responsive: true });
+  </script>
+</html>
