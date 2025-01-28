@@ -7,13 +7,13 @@ tags:
 ---
 
 I have always loved tearing things apart to see how they work and whenever I turn on my computer, I can't help but
-wonder what is it doing? This article is an answer to that question. We'll be exploring what happens when a computer
+wonder, "What is it doing?" This article is an answer to that question. We'll be exploring what happens when a computer
 boots up using the [xv6-riscv](https://github.com/mit-pdos/xv6-riscv) os.
 
-Computer hardware is by itself useless without software and for a computer to run any software it must first load the
-software into it's memory. The operating system is the first software that the computer runs after it has turned on.
-Computers running RISC-V processors expects the operating system kernel to be loaded at the memory address
-`0x80000000`. xv6 uses a linker script to load the kernel at that address as shown below.
+Computer hardware is useless by itself without software and for a computer to run any software it must first load the
+software into memory. The operating system is the first software that the computer runs after it has turned on.
+Computers with RISC-V processors expect the operating system kernel to be loaded at the `0x80000000` memory address.
+xv6 uses a linker script to load the kernel at that address as shown below.
 
 {{< gh "https://github.com/mit-pdos/xv6-riscv/blob/de247db5e6384b138f270e0a7c745989b5a9c23b/kernel/kernel.ld#L6-L10" >}}
 
