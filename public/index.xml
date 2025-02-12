@@ -6,8 +6,15 @@
     <description>Recent content on Japheth Obala</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 19 Jan 2025 14:19:21 +0300</lastBuildDate>
+    <lastBuildDate>Tue, 28 Jan 2025 15:31:49 +0300</lastBuildDate>
     <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>What Happens When You Turn On A Computer ?</title>
+      <link>http://localhost:1313/posts/technical/boot-process/</link>
+      <pubDate>Tue, 28 Jan 2025 15:31:49 +0300</pubDate>
+      <guid>http://localhost:1313/posts/technical/boot-process/</guid>
+      <description>&lt;p&gt;I have always loved tearing things apart to see how they work and whenever I turn on my computer, I can&amp;rsquo;t help but&#xA;wonder, &amp;ldquo;What is it doing?&amp;rdquo; This article is an answer to that question. We&amp;rsquo;ll be exploring what happens when a computer&#xA;boots up using the &lt;a href=&#34;https://github.com/mit-pdos/xv6-riscv&#34;&gt;xv6-riscv&lt;/a&gt; os.&lt;/p&gt;&#xA;&lt;p&gt;Computer hardware is useless by itself without software and for a computer to run any software it must first load the&#xA;software into memory. The operating system is the first software that the computer runs after it has turned on.&#xA;Computers with RISC-V processors expect the operating system kernel to be loaded at the &lt;code&gt;0x80000000&lt;/code&gt; memory address.&#xA;xv6 uses a linker script to load the kernel at that address as shown below.&lt;/p&gt;</description>
+    </item>
     <item>
       <title>Beauty Is Good For You</title>
       <link>http://localhost:1313/posts/reflections/beauty-is-good/</link>

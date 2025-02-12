@@ -1,0 +1,85 @@
+<html lang="en">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <link rel="stylesheet" href="/css/reset.css" />
+  <link rel="stylesheet" href="/css/font.css" />
+  <link rel="stylesheet" href="/css/butterick.css" />
+  <script defer language="javascript" type="text/javascript" src="/js/gh.js"></script>
+  <script src="https://unpkg.com/github-calendar@latest/dist/github-calendar.min.js"></script>
+  <link rel="stylesheet" href="https://unpkg.com/github-calendar@latest/dist/github-calendar-responsive.css" />
+  <link rel="stylesheet"
+      href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/default.min.css">  
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
+</head>
+
+  <body>
+    <header>
+  <nav>
+    <div class="home">
+      <a href="http://localhost:1313/">
+        <h3>Home</h3>
+      </a>
+    </div>
+    
+    
+      
+        
+        <div class="vl"></div>
+        <div class="menu-item">
+          <a  href="/about/"><h3>About</h3></a>
+        </div>
+      
+    
+  </nav>
+</header>
+
+    <div id="content">
+      
+  <h1>Database Storage: Files And Pages</h1>
+  <h3 id="introduction">Introduction</h3>
+<p>The storage subsystem is an important database component and is responsible for how data is stored on
+disk and loaded into memory. In this article we&rsquo;ll be exploring how a database persists its data on disk.</p>
+<h3 id="files-and-pages">Files And Pages</h3>
+<p>Databases store their data as files in the operating systems&rsquo; filesystem. A database like SQLite stores all its data in
+a single file whereas Postgres and MySQL use multiple files. For example, if we have two tables A and B, then their data
+will be stored on some files <code>/dbdata/A</code> and <code>/dbdata/B</code> in the filesystem.</p>
+<p>Loading the whole file ie <code>/dbdata/A</code> into memory is impractical and expensive. If a table is <strong>1GB</strong> in size we don&rsquo;t
+want to load
+the
+whole <strong>1GB</strong> of it. Instead the file is divided into logical blocks, typically <strong>4KB</strong> in size, which can then be
+loaded
+into
+memory and flushed to disk. We&rsquo;ll call these blocks pages. Each page is uniquely identifiable by a page id.</p>
+<!--TODO: Img of pages on a file -->
+<p>Page Ids enable block addressing, that is, knowing the address of each page in the file. For example, if
+<code>baseAddr = 0x1000, pageId = 5, and pageSize = 4KB (4096 bytes)</code>, the page address would be:
+<code>0x1000 + (5 * 4096) = 0x6000</code>.</p>
+<h3 id="heap-file-organisation">Heap File Organisation</h3>
+<p>A heap file stores an unordered collection of pages with tuples(table rows) stored in random order. It supports the
+usual
+CRUD operations on pages and also iterating over all pages. The DBMS maintains special pages to track data pages (page
+directory) and store metadata, including available space,
+free pages, and page types (metadata or data page)</p>
+<!--TODO: Img of page directory  -->
+<h3 id="freespace-map">Freespace Map</h3>
+<p>The freespace map ensures efficient record storage. It is an array with a length equal to the number of pages. An entry
+in the freespace map, represents the available space in
+a page. For example, if the ith page is only half used then <code>freespaceMap[i] = 50%;</code>. The freespace map allows us to
+know what pages have enough space without scanning all the pages to find a suitable page for record storage.</p>
+<p>When a new row is inserted into a table the DBMS will look through the freespace map to find a page with enough space
+for the record. If none is found a new page is appended and the record stored. The freespace map is periodically updated
+by the DBMS because it is expensive to always update it and store it on disk whenever a record is updated.</p>
+<p>The freespace map can be out of sync with the true page state because it is not updated everytime an entry is added or
+removed in a page. It might show a page as having more space than it has or fuller than it actually is. Both cases are
+handled gracefully either by finding another page or allocating a new page and do not lead to data corruption.</p>
+
+
+    </div>
+    
+  </body>
+  <script>
+    
+    GitHubCalendar(".calendar", "jobala", { responsive: true });
+  </script>
+</html>
