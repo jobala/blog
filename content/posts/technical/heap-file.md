@@ -1,18 +1,17 @@
 ---
-title: "Database Storage: Files And Pages"
+title: "Heap Files"
 date: 2025-02-12T06:48:33+03:00
 slug: files-and-pages
 tags:
-    - database
-    - storage
-    - pages
-    - files
+  - database
+  - storage
+  - files
 ---
 
 ### Introduction
 
 The storage subsystem is an important database component and is responsible for how data is stored on
-disk and loaded into memory. In this article we'll be exploring how a database persists its data on disk.
+disk and loaded into memory. In this article we'll be exploring how a database persists data on disk.
 
 ### Files And Pages
 
@@ -58,10 +57,3 @@ by the DBMS because it is expensive to always update it and store it on disk whe
 The freespace map can be out of sync with the true page state because it is not updated everytime an entry is added or
 removed in a page. It might show a page as having more space than it has or fuller than it actually is. Both cases are
 handled gracefully either by finding another page or allocating a new page and do not lead to data corruption.
-
-
-
-
-
-
-

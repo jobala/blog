@@ -6,8 +6,15 @@
     <description>Recent content on Japheth Obala</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 28 Jan 2025 15:31:49 +0300</lastBuildDate>
+    <lastBuildDate>Wed, 12 Feb 2025 06:48:33 +0300</lastBuildDate>
     <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Database Storage: Files And Pages</title>
+      <link>http://localhost:1313/posts/technical/files-and-pages/</link>
+      <pubDate>Wed, 12 Feb 2025 06:48:33 +0300</pubDate>
+      <guid>http://localhost:1313/posts/technical/files-and-pages/</guid>
+      <description>&lt;h3 id=&#34;introduction&#34;&gt;Introduction&lt;/h3&gt;&#xA;&lt;p&gt;The storage subsystem is an important database component and is responsible for how data is stored on&#xA;disk and loaded into memory. In this article we&amp;rsquo;ll be exploring how a database persists its data on disk.&lt;/p&gt;&#xA;&lt;h3 id=&#34;files-and-pages&#34;&gt;Files And Pages&lt;/h3&gt;&#xA;&lt;p&gt;Databases store their data as files in the operating systems&amp;rsquo; filesystem. A database like SQLite stores all its data in&#xA;a single file whereas Postgres and MySQL use multiple files. For example, if we have two tables A and B, then their data&#xA;will be stored on some files &lt;code&gt;/dbdata/A&lt;/code&gt; and &lt;code&gt;/dbdata/B&lt;/code&gt; in the filesystem.&lt;/p&gt;</description>
+    </item>
     <item>
       <title>What Happens When You Turn On A Computer ?</title>
       <link>http://localhost:1313/posts/technical/boot-process/</link>
