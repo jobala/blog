@@ -2,6 +2,7 @@
 title: "Memory Management"
 date: 2024-09-29T11:50:12+03:00
 slug: memory-mgmt
+draft: true
 categories:
   - os
   - systems
