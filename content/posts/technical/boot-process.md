@@ -1,6 +1,7 @@
 ---
 title: "What Happens When You Turn On A Computer ?"
 date: 2025-01-28T15:31:49+03:00
+draft: true
 tags:
   - os
   - systems-programming
